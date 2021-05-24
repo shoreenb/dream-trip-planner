@@ -18,6 +18,40 @@
 
 <body>
 
+    <header>
+        <!-- Navbar -->
+        <nav class="nav-extended navbar-fixed light-blue accent-2">
+            <div class="nav-wrapper">
+                <a href="{{ url_for('get_itinerarys') }}" class="brand-logo">Dream Trip Planner</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{{ url_for('get_itinerarys') }}">Home</a></li>
+                    <li><a href="#">Account</a></li>
+                    <li><a href="#">New Itinerary</a></li>
+                    <li><a href="#">Manage Destinations</a></li>
+                    <li><a href="#">Log Out</a></li>
+                    <li><a href="#">Log In</a></li>
+                    <li><a href="#">Register</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Side navbar -->
+        <ul class="sidenav" id="mobile-demo">
+            <li>
+                <h4 class="center-align light-blue-text text-accent-2">Dream Trip Planner</h4>
+            </li>
+            <li><a href="{{ url_for('get_itinerarys') }}">Home</a></li>
+            <li><a href="#">Account</a></li>
+            <li><a href="#">New Itinerary</a></li>
+            <li><a href="#">Manage Destinations</a></li>
+            <li><a href="#">Log Out</a></li>
+            <li><a href="#">Log In</a></li>
+            <li><a href="#">Register</a></li>
+        </ul>
+
+    </header>
+
     {% block content %}
     {% endblock %}
 
