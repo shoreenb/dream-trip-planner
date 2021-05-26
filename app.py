@@ -27,6 +27,37 @@ def get_itinerarys():
 
 @app.route("/register", methods=["GET","POST"])
 def register():
+    if request.method == "POST":
+        # check if username laready exists in database
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash("Sorry, this username already exists!")
+            return redirect(url_for("register"))
+
+        password = request.form.get("password")
+        confirm_password = request.form.get("confirm-password")
+
+        if password != confirm_password:
+            flash("Those passwords do not match")
+            return redirect(url_for("register"))
+
+        if password == confirm_password:
+
+            register = {
+                "username": request.form.get("username").lower(),
+                "password": generate_password_hash(
+                    request.form.get("password"))
+            }
+
+        mongo.db.users.insert_one(register)
+
+        # put the new user into 'session' cookie
+        session["user"] = request.form.get("username").lower()
+        flash("Registration Successful!")
+        flash("Thank you for registering with Dream Trip Planner")
+
     return render_template("register.html")
 
 
