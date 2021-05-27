@@ -57,6 +57,7 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
         flash("Thank you for registering with Dream Trip Planner")
+        return redirect(url_for("account", username=session["user"]))
 
     return render_template("register.html")
 
@@ -73,7 +74,11 @@ def login():
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(request.form.get("username")))
+                    flash("Welcome, {}".format(
+                        request.form.get("username")))
+                    return redirect(url_for(
+                        "account", username=session["user"]))
+
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -85,6 +90,14 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
+
+
+@app.route("/account/<username>", methods=["GET", "POST"])
+def account(username):
+    # retrieve the session user's username from the database
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    return render_template("account.html", username=username)
 
 
 if __name__ == "__main__":

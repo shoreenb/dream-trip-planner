@@ -26,7 +26,7 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('get_itinerarys') }}">Home</a></li>
-                    <li><a href="#">Account</a></li>
+                    <li><a href="{{ url_for('account', username=session['user']) }}">Account</a></li>
                     <li><a href="#">New Itinerary</a></li>
                     <li><a href="#">Manage Destinations</a></li>
                     <li><a href="#">Log Out</a></li>
@@ -42,7 +42,7 @@
                 <h4 class="center-align light-blue-text text-accent-2">Dream Trip Planner</h4>
             </li>
             <li><a href="{{ url_for('get_itinerarys') }}">Home</a></li>
-            <li><a href="#">Account</a></li>
+            <li><a href="{{ url_for('account', username=session['user']) }}">Account</a></li>
             <li><a href="#">New Itinerary</a></li>
             <li><a href="#">Manage Destinations</a></li>
             <li><a href="#">Log Out</a></li>
