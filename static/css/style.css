@@ -1,3 +1,11 @@
 .flashes h4 {
     line-height: 1.5;
 }
+
+.caption {
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+}
+
+.register-btn {
+    text-shadow: none;
+}
