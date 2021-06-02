@@ -10,3 +10,58 @@
 .register-btn {
     text-shadow: none;
 }
+
+#popular .row {
+    margin-bottom: 0;
+}
+
+.social .fa-3x {
+    margin: 10px 5px;
+}
+
+/*-------------------- Media Queries ---------------------*/
+@media (max-width: 575px) {
+    nav .brand-logo {
+        position: absolute;
+        color: #fff;
+        display: inline-block;
+        font-size: 1.3rem;
+        padding: 0;
+    }
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .trip-type {
+        width: 80%;
+        height: 100%;
+    }
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .trip-type {
+        height: 170px;
+    }
+
+    h3 {
+        font-size: 2.8rem;
+    }
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .trip-type {
+        height: 190px;
+    }
+}
+
+/*Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .trip-type {
+        height: 140px;
+    }
+}

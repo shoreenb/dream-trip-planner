@@ -22,7 +22,9 @@
         <!-- Navbar -->
         <nav class="nav-extended navbar-fixed light-blue accent-2">
             <div class="nav-wrapper">
-                <a href="{{ url_for('get_itinerarys') }}" class="brand-logo">Dream Trip Planner</a>
+                <a href="{{ url_for('get_itinerarys') }}" class="brand-logo">
+                    Dream Trip Planner
+                </a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('get_itinerarys') }}">Home</a></li>
@@ -77,10 +79,39 @@
         {% endblock %}
     </main>
 
+    <footer>
+        <!-- social links -->
+        <section class="social light-blue accent-2 white-text center">
+            <div class="container">
+                <div class="row">
+                    <img src="" alt="">
+                    <h4>Connect with Us</h4>
+                    <p>Follow Dream Trip Planner on social media fron inspiration, insights and offers!</p>
+                    <div class="col s12">
+                        <a href="https://facebook.com/" class="white-text" target="_blank"><i
+                                class="fab fa-facebook-square fa-3x"></i></a>
+                        <a href="https://twitter.com/" class="white-text" target="_blank"><i
+                                class="fab fa-twitter-square fa-3x"></i></a>
+                        <a href="https://www.linkedin.com/" class="white-text" target="_blank"><i
+                                class="fab fa-linkedin fa-3x"></i></a>
+                        <a href="https://www.instagram.com/" class="white-text" target="_blank"><i
+                                class="fab fa-instagram-square fa-3x"></i></a>
+                        <a href="https://www.pinterest.com/" class="white-text" target="_blank"><i
+                                class="fab fa-pinterest-square fa-3x"></i></a>
+                    </div>
+                    <p class="copyright text-muted">Copyright &copy; <span id="copyright"></span> DreamTripPlanner</p>
+                </div>
+            </div>
+        </section>
+    </footer>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script>
+        $('#copyright').text(new Date().getFullYear());
+    </script>
     {% block scripts %}
     {% endblock %}
 </body>
