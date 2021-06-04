@@ -15,11 +15,14 @@
             <p>Date Created: {{ date_created }}</p>
             {% if session["user"].last_seen %}<p>Last Login: {{ session["user"].last_seen }}</p> {% endif %}
 
+            <h3 class="center-align light-blue-text text-accent-2">
+                My Itineraries
+            </h3>
             <ul class="collapsible">
                 {% for item in itinerarys %}
                 <li><a href="{{ url_for('get_itinerarys') }}">
                         <div class="collapsible-header white-text light-blue accent-2 ">
-                            Itinerary {{ item.order }} {{ item.name }}: {{ item.date }}
+                            {{ item.name }}: {{ item.date }}
 
                         </div>
                     </a>

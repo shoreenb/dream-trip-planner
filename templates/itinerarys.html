@@ -1,27 +1,28 @@
 {% extends "base.html" %}
 {% block content %}
 
-{% for item in itinerarys %}
-{{ item.order }}<br>
-{{ item.date }}<br>
-{{ item.holiday_type }}<br>
-{{ item.country }}<br>
-{{ item.description }}<br>
-{% endfor %}
-
-<ul class="container collapsible popout">
-    <li>
-        <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-        <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-        <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-</ul>
+<div class="row">
+    <div class="col s12 offset-m2">
+        <ul class="container collapsible popout">
+            <h3 class="center light-blue-text text-accent-2">
+                Itineraries
+            </h3>
+            {% for item in itinerarys %}
+            <li>
+                <div class="collapsible-header center white-text light-blue accent-2 ">
+                    <strong>{{ item.name }}</strong>: {{ item.date }}
+                </div>
+                <div class="collapsible-body">
+                    <p><strong>Item No.:</strong> {{ item.order }}</p>
+                    <p><strong>Time:</strong> {{ item.time}}</p>
+                    <p><strong>Country: </strong>{{ item.country }}</p>
+                    <p><strong>Location: </strong>{{ item.holiday_type }}</p>
+                    <p><strong>Notes: </strong>{{ item.description }}</p>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
 
 {% endblock %}

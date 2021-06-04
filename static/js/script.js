@@ -3,4 +3,5 @@
      $(".sidenav").sidenav();
      $('.slider').slider();
      $('.collapsible').collapsible();
+     $('.dropdown-trigger').dropdown();
  });
