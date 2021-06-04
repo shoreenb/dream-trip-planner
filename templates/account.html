@@ -8,42 +8,26 @@
             <h3 class="center-align light-blue-text text-accent-2">
                 {{ username }}'s Profile
             </h3>
+
             <p>Username: {{ username }}</p>
-            <p>First Name: {{ first}}</p>
+            <p>First Name: {{ first }}</p>
             <p>Last Name: {{ last }}</p>
             <p>Date Created: {{ date_created }}</p>
-            <p>Last Login: {{ last_login }}</p>
+            {% if session["user"].last_seen %}<p>Last Login: {{ session["user"].last_seen }}</p> {% endif %}
 
-            <ul class="collapsible popout">
-                <li>
-                    <div class="collapsible-header white-text light-blue accent-2 "><i
-                            class="fas fa-caret-down"></i>First
-                    </div>
-                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            <ul class="collapsible">
+                {% for item in itinerarys %}
+                <li><a href="{{ url_for('get_itinerarys') }}">
+                        <div class="collapsible-header white-text light-blue accent-2 ">
+                            Itinerary {{ item.order }} {{ item.name }}: {{ item.date }}
+
+                        </div>
+                    </a>
                 </li>
-                <li>
-                    <div class="collapsible-header white-text light-blue accent-2"><i
-                            class="fas fa-caret-down"></i>Second
-                    </div>
-                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                </li>
-                <li>
-                    <div class="collapsible-header white-text light-blue accent-2"><i
-                            class="fas fa-caret-down"></i>Third
-                    </div>
-                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                </li>
+                {% endfor %}
             </ul>
         </div>
     </div>
 </div>
-
-{% for item in itinerarys %}
-{{ item.order }}<br>
-{{ item.date }}<br>
-{{ item.holiday_type }}<br>
-{{ item.country }}<br>
-{{ item.description }}<br>
-{% endfor %}
 
 {% endblock %}

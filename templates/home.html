@@ -1,0 +1,196 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- slider-->
+<section class="slider">
+    <ul class="slides">
+        <li>
+            <img src="static/images/maldives.jpg">
+            <div class="hide-on-small-only caption center-align">
+                <h3>If You Have Always Wanted To</h3>
+                <h3>Plan A Dream Trip...</h3>
+            </div>
+        </li>
+        <li>
+            <img src="static/images/tower-bridge.jpg">
+            <div class="hide-on-small-only caption center-align">
+                <h3>But Don't Know How To Start...</h3>
+            </div>
+        </li>
+        <li>
+            <img src="static/images/eiffel-tower.jpg">
+            <div class="hide-on-small-only caption left-align">
+                <h3>Dream Trip Planner Is Here To Help!</h3>
+            </div>
+        </li>
+        <li>
+            {% if session.user %}
+            <img src="static/images/santorini.jpg">
+            <div class="hide-on-small-only caption right-align">
+                <h3>Start Planning Your Dream Trip NOW!</h3>
+                <!-- new itinerary button -->
+                <div class="row">
+                    <button type="submit" class="center-align col s12 m4 offset-m4 btn-large light-blue accent-2">
+                        Start Planning <i class="fas fa-sign-in-alt"></i>
+                    </button>
+                </div>
+                {% else %}
+                <img src="static/images/santorini.jpg">
+                <div class="hide-on-small-only caption right-align">
+                    <h3>Start Planning Your Dream Trip NOW!</h3>
+                    <!-- registration button -->
+                    <div class="row">
+                        <a href="{{ url_for('register') }}" type="submit" class="hide-on-small-only register-btn center-align col s12 m4 offset-m4 btn-large light-blue
+                            accent-2">
+                            Register<i class="fas fa-sign-in-alt"></i>
+                        </a>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <h5 class="hide-on-small-only white-text text-lighten-1 center-align">
+                                Already Registered?
+                                <a href="{{ url_for('login') }}" class="light-blue-text text-accent-1">Log In</a>
+                            </h5>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+        </li>
+    </ul>
+</section>
+<div class="container">
+    <div class="row">
+        <h3 class="center">Need Inspiration?...</h3>
+    </div>
+</div>
+<!-- popular desitinations -->
+<section id="popular">
+    <div class="container">
+        <div class="row">
+            <h4 class="center"><span class="light-blue-text">Popular</span> Destinations</h4>
+            <div class="col s12 m4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="static/images/bora-bora.jpg">
+                        <span class="card-title">Bora Bora</span>
+                    </div>
+                    <div class="card-content">
+                        <p>I am a very simple card. I am good at containing small bits of information.
+                            I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class=" card-action">
+                        <a class="light-blue-text text-accent-3" href="{{ url_for('login') }}">See More ></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="static/images/burj-khalifa.jpg">
+                        <span class="card-title">Dubai</span>
+                    </div>
+                    <div class="card-content">
+                        <p>I am a very simple card. I am good at containing small bits of information.
+                            I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                        <a class="light-blue-text text-accent-3" href="{{ url_for('login') }}">See More ></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="static/images/louvre.jpg">
+                        <span class="card-title">France</span>
+                    </div>
+                    <div class="card-content">
+                        <p>I am a very simple card. I am good at containing small bits of information.
+                            I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                        <a class="light-blue-text text-accent-3" href="{{ url_for('login') }}">See More ></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- type of trip -->
+<section id="popular" class="light-blue lighten-5">
+    <div class="container">
+        <div class="row">
+            <h4 class="center">Type of <span class="light-blue-text">Trip</span></h4>
+            <div class="col s12 m6 xl3">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="trip-type" src="static/images/hong-kong.jpg">
+                        <span class="card-title">City</span>
+                    </div>
+                    <div class="card-content">
+                        <p>I am a very simple card. I am good at containing small bits of information.
+                            I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                        <a class="light-blue-text text-accent-3" href="{{ url_for('login') }}">See More ></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6 xl3">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="trip-type" src="static/images/maldives.jpg">
+                        <span class="card-title">Beach</span>
+                    </div>
+                    <div class="card-content">
+                        <p>I am a very simple card. I am good at containing small bits of information.
+                            I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                        <a class="light-blue-text text-accent-3" href="{{ url_for('login') }}">See More ></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6 xl3">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="trip-type" src="static/images/family.jpg">
+                        <span class="card-title">Family</span>
+                    </div>
+                    <div class="card-content">
+                        <p>I am a very simple card. I am good at containing small bits of information.
+                            I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                        <a class="light-blue-text text-accent-3" href="{{ url_for('login') }}">See More ></a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col s12 m6 xl3">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="trip-type" src="static/images/ski-resort.jpg">
+                        <span class="card-title">Ski</span>
+                    </div>
+                    <div class="card-content">
+                        <p>I am a very simple card. I am good at containing small bits of information.
+                            I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                        <a class="light-blue-text text-accent-3" href="{{ url_for('login') }}">See More ></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

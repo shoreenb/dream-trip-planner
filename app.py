@@ -4,6 +4,7 @@ from flask import (
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
@@ -21,17 +22,28 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_itinerarys")
 def get_itinerarys():
-    itinerarys = mongo.db.itinerarys.find({})
+    itinerarys = list(mongo.db.itinerarys.find())
     return render_template("itinerarys.html", itinerarys=itinerarys)
+
+
+@app.route("/get_account")
+def get_account():
+    itinerarys = list(mongo.db.itinerarys.find())
+    return render_template("account.html", itinerarys=itinerarys)
+
+
+@app.route("/get_home")
+def get_home():
+    return render_template("home.html")
 
 
 @app.route("/register", methods=["GET","POST"])
 def register():
     if request.method == "POST":
-        # check if username laready exists in database
+        # check if username already exists in database
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-
+     
         if existing_user:
             flash("Sorry, this username already exists!")
             return redirect(url_for("register"))
@@ -48,15 +60,17 @@ def register():
             register = {
                 "username": request.form.get("username").lower(),
                 "password": generate_password_hash(
-                    request.form.get("password"))
+                    request.form.get("password")),
+                "first": request.form.get("first").lower(),
+                "last": request.form.get("last").lower(),
+                "date_created": datetime.now(),
             }
 
         mongo.db.users.insert_one(register)
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
-        flash("Registration Successful!")
-        flash("Thank you for registering with Dream Trip Planner")
+        flash("Registration Successful!", "Thank you for registering with Dream Trip Planner")
         return redirect(url_for("account", username=session["user"]))
 
     return render_template("register.html")
@@ -92,15 +106,23 @@ def login():
     return render_template("login.html")
 
 
+@app.before_request
+def before_request():
+    loggedIn = True if 'user' in session else False
+    if session["user"] == loggedIn:
+        session["user"].last_seen = datetime.utcnow()
+        db.session.commit()
+
+
 @app.route("/account/<username>", methods=["GET", "POST"])
 def account(username):
     # retrieve the session user's username from the database
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-
+ 
     if session["user"]:
         return render_template("account.html", username=username)
-        
+    
     return redirect(url_for("login"))
 
 
