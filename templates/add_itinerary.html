@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="center-align light-blue-text text-accent-2">
+    Add Itinerary
+</h3>
+<div class="row">
+    <form class="col s12" method="POST" action="">
+        <div class="row">
+            <div class="input-field col s2 offset-m4">
+                <!-- Dropdown Trigger -->
+                <a class='dropdown-trigger btn-large light-blue accent-2' href='#' data-target='dropdown1'><i
+                        class="fas fa-angle-down left fa-2x white-text"></i>Location</a>
+
+                <!-- Dropdown Structure -->
+                <ul id='dropdown1' class='dropdown-content'>
+                    <li><a href="#!">one</a></li>
+                    <li><a href="#!">two</a></li>
+                    <li class="divider" tabindex="-1"></li>
+                    <li><a href="#!">three</a></li>
+                    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+                    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+                </ul>
+            </div>
+            <div class="input-field col s2">
+                <!-- Dropdown Trigger -->
+                <a class='dropdown-trigger btn-large light-blue accent-2' href='#' data-target='dropdown1'><i
+                        class="fas fa-angle-down left fa-2x white-text"></i>Trip Type</a>
+
+                <!-- Dropdown Structure -->
+                <ul id='dropdown1' class='dropdown-content'>
+                    <li><a href="#">one</a></li>
+                    <li><a href="#!">two</a></li>
+                    <li class="divider" tabindex="-1"></li>
+                    <li><a href="#!">three</a></li>
+                    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+                    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s4 offset-m4">
+                <i class="fas fa-pencil-alt prefix light-blue-text text-accent-2"></i>
+                <input id="item_name" name="item_name" minlength="5" maxlength="50" type="text" class="validate"
+                    required>
+                <label for="item_name">Trip Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s4 offset-m4">
+                <i class="fas fa-calendar-alt prefix light-blue-text text-accent-2"></i>
+                <input id="date" name="date" type="text" class="datepicker validate" required>
+                <label for="date">Date</label>
+            </div>
+            <div id="itinerary_card" class="row">
+                <div class="card-panel col s12 m6 offset-m3">
+                    <div class="first_itinerary_card">
+                        <div class="row">
+                            <a class="btn-floating btn-large right waves-effect waves-light red activator"
+                                onclick="duplicate();"><i class="fas fa-plus"></i></a>
+                            <div class="input-field col s10 offset-m1 offset-m1">
+                                <i class="fas fa-pencil-alt prefix light-blue-text text-accent-2"></i>
+                                <input id="item_name" name="item_name" minlength="5" maxlength="50" type="text"
+                                    class="validate" required>
+                                <label for="item_name">Item Name</label>
+                            </div>
+                        </div>
+                        <div class="input-field col s5 offset-m1 offset-m1">
+                            <i class="fas fa-clock prefix light-blue-text text-accent-2"></i>
+                            <input id="time" name="time" type="text" class="timepicker validate" required>
+                            <label for="time">Time</label>
+                        </div>
+                        <div class="input-field col s5">
+                            <i class="fas fa-stopwatch prefix light-blue-text text-accent-2"></i>
+                            <input id="duration" name="duration" type="number" step="10" min="0" class="validate"
+                                required>
+                            <label for="duration">Duration(Minutes)</label>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s10 offset-m1 offset-m1">
+                                <i class="fas fa-align-left prefix light-blue-text text-accent-2"></i>
+                                <textarea id="item_description" name="item_description" minlength="5" maxlength="200"
+                                    class="materialize-textarea validate" required></textarea>
+                                <label for="item_description">Description</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="itinerary_card_new" class="row">
+            </div>
+
+    </form>
+</div>
+
+{% endblock %}

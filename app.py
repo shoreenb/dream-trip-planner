@@ -23,7 +23,7 @@ mongo = PyMongo(app)
 @app.route("/get_itinerarys")
 def get_itinerarys():
     itinerarys = list(mongo.db.itinerarys.find())
-    return render_template("itinerarys.html", itinerarys=itinerarys)
+    return render_template("itinerary.html", itinerarys=itinerarys)
 
 
 @app.route("/get_account")
@@ -132,6 +132,11 @@ def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+@app.route("/add_itinerary")
+def add_itinerary():
+    return render_template("add_itinerary.html")
 
 
 if __name__ == "__main__":

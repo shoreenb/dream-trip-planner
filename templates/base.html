@@ -30,6 +30,7 @@
                     <li><a href="{{ url_for('get_home') }}">Home</a></li>
                     {% if session.user %}
                     <li><a href="{{ url_for('get_account', username=session['user']) }}">Account</a></li>
+                    <li><a href="{{ url_for('add_itinerary') }}">Add Itinerary</a></li>
                     <li><a href="{{ url_for('get_itinerarys') }}">Itineraries</a></li>
                     <li><a href="#">Manage Destinations</a></li>
                     <li><a href="{{ url_for('logout') }}">Log Out</a></li>
@@ -49,6 +50,7 @@
             <li><a href="{{ url_for('get_home') }}">Home</a></li>
             {% if session.user %}
             <li><a href="{{ url_for('get_account', username=session['user']) }}">Account</a></li>
+            <li><a href="{{ url_for('add_itinerary') }}">Add Itinerary</a></li>
             <li><a href="{{ url_for('get_itinerarys') }}">Itineraries</a></li>
             <li><a href="#">Manage Destinations</a></li>
             <li><a href="{{ url_for('logout') }}">Log Out</a></li>

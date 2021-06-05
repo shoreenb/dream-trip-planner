@@ -10,14 +10,14 @@
             {% for item in itinerarys %}
             <li>
                 <div class="collapsible-header center white-text light-blue accent-2 ">
-                    <strong>{{ item.name }}</strong>: {{ item.date }}
+                    <strong>{{ item.item_name }}</strong>: {{ item.date }}
                 </div>
                 <div class="collapsible-body">
                     <p><strong>Item No.:</strong> {{ item.order }}</p>
                     <p><strong>Time:</strong> {{ item.time}}</p>
                     <p><strong>Country: </strong>{{ item.country }}</p>
                     <p><strong>Location: </strong>{{ item.holiday_type }}</p>
-                    <p><strong>Notes: </strong>{{ item.description }}</p>
+                    <p><strong>Notes: </strong>{{ item.item_description }}</p>
                 </div>
             </li>
             {% endfor %}
