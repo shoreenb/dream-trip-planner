@@ -26,8 +26,11 @@ def get_itinerarys():
     return render_template("itinerary.html", itinerarys=itinerarys)
 
 
-@app.route("/get_account")
+@app.route("/get_account", methods=["GET", "POST"])
 def get_account():
+    # if request.method == "POST":
+    #     profile = {
+    #         "trip_name": request.form.get("trip_name"),
     itinerarys = list(mongo.db.itinerarys.find())
     return render_template("account.html", itinerarys=itinerarys)
 
@@ -71,7 +74,7 @@ def register():
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!", "Thank you for registering with Dream Trip Planner")
-        return redirect(url_for("account", username=session["user"]))
+        return redirect(url_for("get_account", username=session["user"]))
 
     return render_template("register.html")
 
@@ -91,7 +94,7 @@ def login():
                     flash("Welcome, {}".format(
                         request.form.get("username")))
                     return redirect(url_for(
-                        "account", username=session["user"]))
+                        "get_account", username=session["user"]))
 
             else:
                 # invalid password match
@@ -134,12 +137,33 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_itinerary")
+@app.route("/add_itinerary", methods=["GET", "POST"])
 def add_itinerary():
+    if request.method == "POST":
+        item = {
+            "trip_name": request.form.get("trip_name"),
+            "date": request.form.get("date"),
+            "countries": request.form.get("countries"),
+            "cities": request.form.get("cities"),
+            "categories": request.form.get("categories"),
+            "activity_name": request.form.get("activity_name"),
+            "day": request.form.get("day"),
+            "time": request.form.get("time"),
+            "duration": request.form.get("duration"),
+            "item_description": request.form.get("item_description"),
+            "created_by": session["user"],
+            "date_created": datetime.utcnow(),
+            "last_updated": datetime.now()
+        }
+        mongo.db.itinerarys.insert_one(item)
+        flash("Itinerary Successfully Added")
+        return redirect(url_for("get_itinerarys"))
+
     categories = mongo.db.categories.find().sort("categories", 1)
     countries = mongo.db.countries.find().sort("countries", 1)
+    cities = mongo.db.cities.find().sort("cities", 1)
     return render_template("add_itinerary.html", categories=categories, 
-        countries=countries)
+        countries=countries, cities=cities)
 
 
 if __name__ == "__main__":

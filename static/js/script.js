@@ -18,6 +18,8 @@
          twelveHour: false,
          showClearBtn: true,
          i18n: {
+             cancel: "Cancel",
+             clear: "Clear",
              done: "Select"
          }
      });

@@ -19,6 +19,10 @@
     margin: 10px 5px;
 }
 
+div.input-field.col.s6.s10.offset-m1 {
+    margin-top: 50px;
+}
+
 /*-------------------- Media Queries ---------------------*/
 @media (max-width: 575px) {
     nav .brand-logo {

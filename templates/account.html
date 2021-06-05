@@ -12,8 +12,7 @@
             <p>Username: {{ username }}</p>
             <p>First Name: {{ first }}</p>
             <p>Last Name: {{ last }}</p>
-            <p>Date Created: {{ date_created }}</p>
-            {% if session["user"].last_seen %}<p>Last Login: {{ session["user"].last_seen }}</p> {% endif %}
+
 
             <h3 class="center-align light-blue-text text-accent-2">
                 My Itineraries
@@ -22,7 +21,7 @@
                 {% for item in itinerarys %}
                 <li><a href="{{ url_for('get_itinerarys') }}">
                         <div class="collapsible-header white-text light-blue accent-2 ">
-                            {{ item.item_name }}: {{ item.date }}
+                            {{ item.trip_name }}: {{ item.date }}
 
                         </div>
                     </a>
