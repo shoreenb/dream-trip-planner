@@ -136,7 +136,10 @@ def logout():
 
 @app.route("/add_itinerary")
 def add_itinerary():
-    return render_template("add_itinerary.html")
+    categories = mongo.db.categories.find().sort("categories", 1)
+    countries = mongo.db.countries.find().sort("countries", 1)
+    return render_template("add_itinerary.html", categories=categories, 
+        countries=countries)
 
 
 if __name__ == "__main__":
