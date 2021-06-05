@@ -9,8 +9,15 @@
             </h3>
             {% for item in itinerarys %}
             <li>
-                <div class="collapsible-header center white-text light-blue accent-2 ">
+                <div class="collapsible-header center white-text light-blue accent-2">
+                    <div class="col ">
+                        <i class="fas fa-caret-down"></i>
+                    </div>
                     <strong>{{ item.trip_name }}</strong>: {{ item.date }}
+                    <div class="col offset-m6">
+                        <a href="" class="btn-small red darken-1">Edit</a>
+                        <a href="" class="btn-small green accent-4">Done</a>
+                    </div>
                 </div>
                 <div class="collapsible-body">
                     <p><strong>Day No.:</strong> {{ item.day }}</p>
@@ -23,6 +30,7 @@
                     <p><strong>Description: </strong>{{ item.item_description }}</p>
                     <p><em>By: {{ item.created_by }}</em></p>
                 </div>
+
             </li>
             {% endfor %}
         </ul>

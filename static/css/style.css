@@ -23,6 +23,17 @@ div.input-field.col.s6.s10.offset-m1 {
     margin-top: 50px;
 }
 
+.btn-small {
+    margin: 5px;
+}
+
+.collapsible-header.center.white-text.light-blue.accent-2 {
+    line-height: 42px;
+    padding-top: 1rem;
+}
+
+
+
 /*-------------------- Media Queries ---------------------*/
 @media (max-width: 575px) {
     nav .brand-logo {
