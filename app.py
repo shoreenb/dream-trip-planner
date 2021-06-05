@@ -26,15 +26,6 @@ def get_itinerarys():
     return render_template("itinerary.html", itinerarys=itinerarys)
 
 
-@app.route("/get_account", methods=["GET", "POST"])
-def get_account():
-    # if request.method == "POST":
-    #     profile = {
-    #         "trip_name": request.form.get("trip_name"),
-    itinerarys = list(mongo.db.itinerarys.find())
-    return render_template("account.html", itinerarys=itinerarys)
-
-
 @app.route("/get_home")
 def get_home():
     return render_template("home.html")
@@ -64,9 +55,9 @@ def register():
                 "username": request.form.get("username").lower(),
                 "password": generate_password_hash(
                     request.form.get("password")),
-                "first": request.form.get("first").lower(),
-                "last": request.form.get("last").lower(),
-                "date_created": datetime.now(),
+                "first": request.form.get("first").upper(),
+                "last": request.form.get("last").upper(),
+                "date_created": datetime.utcnow()
             }
 
         mongo.db.users.insert_one(register)
@@ -109,12 +100,12 @@ def login():
     return render_template("login.html")
 
 
-@app.before_request
-def before_request():
-    loggedIn = True if 'user' in session else False
-    if session["user"] == loggedIn:
-        session["user"].last_seen = datetime.utcnow()
-        db.session.commit()
+# @app.before_request
+# def before_request():
+#     loggedIn = True if 'user' in session else False
+#     if session["user"] == loggedIn:
+#         session["user"].last_seen = datetime.utcnow()
+#         db.session.commit()
 
 
 @app.route("/account/<username>", methods=["GET", "POST"])
@@ -127,6 +118,24 @@ def account(username):
         return render_template("account.html", username=username)
     
     return redirect(url_for("login"))
+
+
+@app.route("/get_account", methods=["GET", "POST"])
+def get_account():
+    if request.method == "POST":
+        profile = {
+            "username": request.form.get("username"),
+            "first": request.form.get("first").upper(),
+            "last": request.form.get("last").upper(),
+            "date_created": datetime.utcnow()
+        }
+        mongo.db.users.insert_one(profile)
+        flash("Account Successfully Added")
+        return redirect(url_for("get_account"))
+
+    itinerarys = list(mongo.db.itinerarys.find())
+    users = list(mongo.db.users.find())
+    return render_template("account.html", itinerarys=itinerarys, users=users)
 
 
 @app.route("/logout")
