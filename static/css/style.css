@@ -23,6 +23,10 @@ div.input-field.col.s6.s10.offset-m1 {
     margin-top: 50px;
 }
 
+#destination_card div.input-field.col.s6.s10.offset-m1 {
+    margin: 50px;
+}
+
 .btn-small {
     margin: 5px;
 }

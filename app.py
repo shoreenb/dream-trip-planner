@@ -195,10 +195,10 @@ def edit_itinerary(itinerary_id):
     countries = mongo.db.countries.find().sort("countries", 1)
     cities = mongo.db.cities.find().sort("cities", 1)
     return render_template(
-        "edit_itinerary.html", 
-        itinerary=itinerary, 
-        categories=categories, 
-        countries=countries, 
+        "edit_itinerary.html",
+        itinerary=itinerary,
+        categories=categories,
+        countries=countries,
         cities=cities)
 
 @app.route("/delete_itinerary/<itinerary_id>")
@@ -221,11 +221,31 @@ def admin():
         "username":session["user"]
     }))
 
+
     return render_template(
         "itinerary.html", 
         all_itineraries=all_itineraries,
         user_itineraries=user_itineraries
     )
+
+
+@app.route("/add_cities", methods=["GET", "POST"])
+def add_cities():
+    if request.method == "POST":
+        city = {
+            "country": request.form.get("country"),
+            "name": request.form.get("name")
+        }
+        mongo.db.cities.insert_one(city)
+        flash("New Destination Added")
+        return redirect(url_for("get_cities"))
+
+    countries = mongo.db.countries.find().sort("country", 1)
+    cities = mongo.db.cities.find().sort("name", 1)
+    return render_template(
+        "add_destination.html",
+        countries=countries,
+        cities=cities)
 
 
 if __name__ == "__main__":

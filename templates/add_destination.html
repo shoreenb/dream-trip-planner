@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="center-align light-blue-text text-accent-2">
+    Add Destinations
+</h3>
+<div class="row">
+    <form class="col s12" method="POST" action="{{ url_for('add_cities') }}">
+        <!-- add destination card -->
+        <!-- country name -->
+        <div id="destination_card" class="row">
+            <div class="card-panel col s12 m6 offset-m3">
+                <div class="row">
+                    <div class="input-field col s6 col s10 offset-m1 offset-m1">
+                        <i class="fas fa-globe-africa prefix light-blue-text text-accent-2"></i>
+                        <input id="country" name="country" minlength="3" maxlength="20" type="text" class="validate"
+                            required>
+                        <label for="country">Country Name</label>
+                    </div>
+                </div>
+                <!-- city name -->
+                <div id="city_row" class="input-field col s6 col s10 offset-m1 offset-m1">
+                    <i class="fas fa-city prefix light-blue-text text-accent-2"></i>
+                    <input id="name" name="name" minlength="3" maxlength="20" type="text" class="validate" required>
+                    <label for="name">City Name</label>
+                </div>
+            </div>
+            <!-- submit button -->
+            <div class="row">
+                <div class="center-align col s4 offset-m4">
+                    <button type="submit" class="btn-large light-blue darken-1">
+                        Add Destination <i class="fas fa-plus-square right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
