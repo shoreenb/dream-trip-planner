@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="center-align light-blue-text text-accent-2">
+    Edit Destination
+</h3>
+<div class="row">
+    <form class="col s12" method="POST" action="{{ url_for('edit_cities', city_id=city._id) }}">
+        <!-- add destination card -->
+        <!-- country name -->
+        <div id="destination_card" class="row">
+            <div class="card-panel col s12 m6 offset-m3">
+                <div class="row">
+                    <div class="input-field col s6 col s10 offset-m1 offset-m1">
+                        <i class="fas fa-globe-africa prefix light-blue-text text-accent-2"></i>
+                        <input id="country" name="country" minlength="3" maxlength="20" type="text"
+                            value="{{ city.country }}" class="validate" required>
+                        <label for="country">Country Name</label>
+                    </div>
+                </div>
+                <!-- city name -->
+                <div id="city_row" class="input-field col s6 col s10 offset-m1 offset-m1">
+                    <i class="fas fa-city prefix light-blue-text text-accent-2"></i>
+                    <input id="name" name="name" minlength="3" maxlength="20" type="text" value="{{ city.name }}"
+                        class="validate" required>
+                    <label for="name">City Name</label>
+                </div>
+            </div>
+            <!-- submit button -->
+            <div class="row">
+                <div class="center-align col s4 offset-m4">
+                    <a href="{{ url_for('get_cities') }}" class="btn-large red darken-1">
+                        Cancel <i class="fas fa-times-circle right"></i>
+                    </a>
+                    <button type="submit" class="btn-large light-blue darken-1">
+                        Edit Destination <i class="fas fa-edit right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

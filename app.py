@@ -248,6 +248,21 @@ def add_cities():
         cities=cities)
 
 
+@app.route("/edit_cities/<city_id>", methods=["GET", "POST"])
+def edit_cities(city_id):
+    if request.method == "POST":
+        item = {
+            "country": request.form.get("country"),
+            "name": request.form.get("name")
+        }
+        mongo.db.cities.update({"_id": ObjectId(city_id)}, item)
+        flash("Destination Successfully Updated")
+        return redirect(url_for("get_cities"))
+
+    city = mongo.db.cities.find_one({"_id": ObjectId(city_id)})
+    return render_template("edit_destination.html", city=city)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

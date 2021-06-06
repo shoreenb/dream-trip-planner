@@ -31,7 +31,8 @@
                             <td>{{ city.country }}</td>
                             <td>{{ city.name }}</td>
                             <td>
-                                <a href="#" class="btn-small green accent-4">Edit</a>
+                                <a href="{{ url_for('edit_cities', city_id=city._id) }}"
+                                    class="btn-small green accent-4">Edit</a>
                                 <a href="#" class="btn-small red darken-1 modal-trigger">Remove</a>
                             </td>
                         </tr>
