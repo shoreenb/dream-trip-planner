@@ -15,7 +15,8 @@
                     </div>
                     <strong>{{ item.trip_name }}</strong>: {{ item.date }}
                     <div class="col offset-m6">
-                        <a href="" class="btn-small red darken-1">Edit</a>
+                        <a href="{{ url_for('edit_itinerary', itinerary_id=item._id)}}"
+                            class="btn-small red darken-1">Edit</a>
                         <a href="" class="btn-small green accent-4">Done</a>
                     </div>
                 </div>

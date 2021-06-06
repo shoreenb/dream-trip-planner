@@ -55,8 +55,8 @@ def register():
                 "username": request.form.get("username").lower(),
                 "password": generate_password_hash(
                     request.form.get("password")),
-                "first": request.form.get("first").upper(),
-                "last": request.form.get("last").upper(),
+                "first": request.form.get("first"),
+                "last": request.form.get("last"),
                 "date_created": datetime.utcnow()
             }
 
@@ -122,20 +122,9 @@ def account(username):
 
 @app.route("/get_account", methods=["GET", "POST"])
 def get_account():
-    if request.method == "POST":
-        profile = {
-            "username": request.form.get("username"),
-            "first": request.form.get("first").upper(),
-            "last": request.form.get("last").upper(),
-            "date_created": datetime.utcnow()
-        }
-        mongo.db.users.insert_one(profile)
-        flash("Account Successfully Added")
-        return redirect(url_for("get_account"))
 
     itinerarys = list(mongo.db.itinerarys.find())
-    users = list(mongo.db.users.find())
-    return render_template("account.html", itinerarys=itinerarys, users=users)
+    return render_template("account.html", itinerarys=itinerarys)
 
 
 @app.route("/logout")
@@ -174,6 +163,13 @@ def add_itinerary():
     return render_template("add_itinerary.html", categories=categories, 
         countries=countries, cities=cities)
 
+
+@app.route("/edit_itinerary/<itinerary_id>", methods=["GET", "POST"])
+def edit_itinerary(itinerary_id):
+    itinerary = mongo.db.itinerarys.find_one({"_id": ObjectId(itinerary_id)})
+
+    categories = mongo.db.categories.find().sort("categories", 1)
+    return render_template("edit_itinerary.html", itinerary=itinerary, categories=categories)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
