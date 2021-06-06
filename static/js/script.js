@@ -4,6 +4,9 @@
      $('.slider').slider();
      $('.collapsible').collapsible();
      $('select').formSelect();
+     $('.modal').modal({
+         dismissible: false
+     });
      $('.datepicker').datepicker({
          format: "dd mmmm, yyyy",
          minDate: new Date(),

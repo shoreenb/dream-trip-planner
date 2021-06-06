@@ -201,6 +201,13 @@ def edit_itinerary(itinerary_id):
         countries=countries, 
         cities=cities)
 
+@app.route("/delete_itinerary/<itinerary_id>")
+def delete_itinerary(itinerary_id):
+    mongo.db.itinerarys.remove({"_id": ObjectId(itinerary_id)})
+    flash("Itinerary Successfully Deleted")
+    return redirect(url_for("get_itinerarys"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
