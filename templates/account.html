@@ -20,13 +20,14 @@
             </h3>
             <ul class="collapsible">
                 {% for item in itinerarys %}
+                {% if session.user|lower == item.created_by|lower %}
                 <li><a href="{{ url_for('get_itinerarys') }}">
                         <div class="collapsible-header white-text light-blue accent-2 ">
                             {{ item.trip_name }}: {{ item.date }}
-
                         </div>
                     </a>
                 </li>
+                {% endif %}
                 {% endfor %}
             </ul>
         </div>

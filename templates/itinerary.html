@@ -15,18 +15,20 @@
                     </div>
                     <strong>{{ item.trip_name }}</strong>: {{ item.date }}
                     <div class="col offset-m6">
+                        {% if session.user|lower == item.created_by|lower %}
                         <a href="{{ url_for('edit_itinerary', itinerary_id=item._id)}}"
                             class="btn-small red darken-1">Edit</a>
                         <a href="" class="btn-small green accent-4">Done</a>
+                        {% endif %}
                     </div>
                 </div>
                 <div class="collapsible-body">
                     <p><strong>Day No.:</strong> {{ item.day }}</p>
                     <p><strong>Time:</strong> {{ item.time }}</p>
                     <p><strong>Duration:</strong> {{ item.duration }}</p>
-                    <p><strong>Trip Type: </strong>{{ item.trip_type }}</p>
-                    <p><strong>Country: </strong>{{ item.country }}</p>
-                    <p><strong>City: </strong>{{ item.city }}</p>
+                    <p><strong>Trip Type: </strong>{{ item.categories }}</p>
+                    <p><strong>Country: </strong>{{ item.countries }}</p>
+                    <p><strong>City: </strong>{{ item.cities }}</p>
                     <p><strong>Activity Name: </strong>{{ item.activity_name }}</p>
                     <p><strong>Description: </strong>{{ item.item_description }}</p>
                     <p><em>By: {{ item.created_by }}</em></p>

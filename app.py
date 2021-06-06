@@ -143,7 +143,7 @@ def add_itinerary():
             "date": request.form.get("date"),
             "countries": request.form.get("countries"),
             "cities": request.form.get("cities"),
-            "trip_type": request.form.get("trip_type"),
+            "categories": request.form.get("categories"),
             "activity_name": request.form.get("activity_name"),
             "day": request.form.get("day"),
             "time": request.form.get("time"),
@@ -170,6 +170,25 @@ def add_itinerary():
 
 @app.route("/edit_itinerary/<itinerary_id>", methods=["GET", "POST"])
 def edit_itinerary(itinerary_id):
+    if request.method == "POST":
+        item = {
+            "trip_name": request.form.get("trip_name"),
+            "date": request.form.get("date"),
+            "countries": request.form.get("countries"),
+            "cities": request.form.get("cities"),
+            "categories": request.form.get("categories"),
+            "activity_name": request.form.get("activity_name"),
+            "day": request.form.get("day"),
+            "time": request.form.get("time"),
+            "duration": request.form.get("duration"),
+            "item_description": request.form.get("item_description"),
+            "created_by": session["user"],
+            "date_created": datetime.utcnow(),
+            "last_updated": datetime.now()
+        }
+        mongo.db.itinerarys.update({"_id": ObjectId(itinerary_id)}, item)
+        flash("Itinerary Successfully Updated")
+
     itinerary = mongo.db.itinerarys.find_one({"_id": ObjectId(itinerary_id)})
 
     categories = mongo.db.categories.find().sort("categories", 1)
