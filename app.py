@@ -263,6 +263,13 @@ def edit_cities(city_id):
     return render_template("edit_destination.html", city=city)
 
 
+@app.route("/delete_cities/<city_id>")
+def delete_cities(city_id):
+    mongo.db.cities.remove({"_id": ObjectId(city_id)})
+    flash("Destination Successfully Deleted")
+    return redirect(url_for("get_cities"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
