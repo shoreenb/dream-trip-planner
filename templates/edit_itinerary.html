@@ -12,8 +12,8 @@
             <div class="row">
                 <div class="input-field col s4 offset-m4">
                     <i class="fas fa-pencil-alt prefix light-blue-text text-accent-2"></i>
-                    <input id="trip_name" name="trip_name" minlength="5" maxlength="50" type="text" class="validate"
-                        required>
+                    <input id="trip_name" name="trip_name" minlength="5" maxlength="50"
+                        value="{{ itinerary.trip_name }}" type="text" class="validate" required>
                     <label for="trip_name">Trip Name</label>
                 </div>
             </div>
@@ -21,7 +21,8 @@
             <div class="row">
                 <div class="input-field col s4 offset-m4">
                     <i class="fas fa-calendar-alt prefix light-blue-text text-accent-2"></i>
-                    <input id="date" name="date" type="text" class="datepicker validate" required>
+                    <input id="date" name="date" type="text" value="{{ itinerary.date }}" class="datepicker validate"
+                        required>
                     <label for="date">Date</label>
                 </div>
                 <!-- select country -->
@@ -29,9 +30,13 @@
                     <div class="input-field col s12">
                         <i class="fas fa-globe-africa prefix light-blue-text text-accent-2"></i>
                         <select id="countries" name="countries" class="validate" required>
-                            <option value="" disabled selected>Choose Country</option>
+                            <option value="" disabled>Choose Country</option>
                             {% for country in countries %}
+                            {% if country.name == itinerary.countries %}
+                            <option value="{{ country.name }}" selected>{{ country.name }}</option>
+                            {% else %}
                             <option value="{{ country.name }}">{{ country.name }}</option>
+                            {% endif %}
                             {% endfor %}
                         </select>
                         <label for="countries">Country</label>
@@ -42,9 +47,13 @@
                     <div class="input-field col s12">
                         <i class="fas fa-city prefix light-blue-text text-accent-2"></i>
                         <select id="cities" name="cities" class="validate" required>
-                            <option value="" disabled selected>Choose City</option>
+                            <option value="" disabled>Choose City</option>
                             {% for city in cities %}
+                            {% if city.name == itinerary.cities %}
+                            <option value="{{ city.name}}" selected>{{ city.name }}</option>
+                            {% else %}
                             <option value="{{ city.name}}">{{ city.name }}</option>
+                            {% endif %}
                             {% endfor %}
                         </select>
                         <label for="cities">City</label>
@@ -55,9 +64,13 @@
                     <div class="input-field col s12">
                         <i class="fas fa-suitcase prefix light-blue-text text-accent-2"></i>
                         <select id="categories" name="categories" class="validate" required>
-                            <option value="" disabled selected>Choose Trip Type</option>
+                            <option value="" disabled>Choose Trip Type</option>
                             {% for category in categories %}
+                            {% if category.trip_type == itinerary.trip_type %}
+                            <option value="{{ category.trip_type }}" selected>{{ category.trip_type }}</option>
+                            {% else %}
                             <option value="{{ category.trip_type }}">{{ category.trip_type }}</option>
+                            {% endif %}
                             {% endfor %}
                         </select>
                         <label for="categories">Trip Type</label>
@@ -73,27 +86,29 @@
                             <div class="input-field col s6 col s10 offset-m1 offset-m1">
                                 <i class="fas fa-pencil-alt prefix light-blue-text text-accent-2"></i>
                                 <input id="activity_name" name="activity_name" minlength="5" maxlength="50" type="text"
-                                    class="validate" required>
+                                    value="{{ itinerary.activity_name }}" class="validate" required>
                                 <label for="activity_name">Activity Name</label>
                             </div>
                         </div>
                         <!-- day -->
                         <div class="input-field col s3 offset-m1">
                             <i class="fas fa-calendar-day prefix light-blue-text text-accent-2"></i>
-                            <input id="day" name="day" type="number" min="1" class="validate" required>
+                            <input id="day" name="day" type="number" value="{{ itinerary.day }}" min="1"
+                                class="validate" required>
                             <label for="day">Day</label>
                         </div>
                         <!-- timepicker -->
                         <div class="input-field col s3">
                             <i class="fas fa-clock prefix light-blue-text text-accent-2"></i>
-                            <input id="time" name="time" type="text" class="timepicker validate" required>
+                            <input id="time" name="time" type="text" value="{{ itinerary.time }}"
+                                class="timepicker validate" required>
                             <label for="time">Time</label>
                         </div>
                         <!-- duration of itinerary item -->
                         <div class="input-field col s3">
                             <i class="fas fa-stopwatch prefix light-blue-text text-accent-2"></i>
-                            <input id="duration" name="duration" type="number" step="10" min="0" class="validate"
-                                required>
+                            <input id="duration" name="duration" type="number" value="{{ itinerary.duration }}"
+                                step="10" min="0" class="validate" required>
                             <label for="duration">Duration(Minutes)</label>
                         </div>
                         <!-- itinerary item description -->
@@ -101,7 +116,9 @@
                             <div class="input-field col s10 offset-m1 offset-m1">
                                 <i class="fas fa-align-left prefix light-blue-text text-accent-2"></i>
                                 <textarea id="item_description" name="item_description" minlength="5" maxlength="200"
-                                    class="materialize-textarea validate" required></textarea>
+                                    class="materialize-textarea validate" required>
+                                {{- itinerary.item_description -}}
+                                </textarea>
                                 <label for="item_description">Description</label>
                                 <a class="btn-floating btn-large right waves-effect waves-light red activator"
                                     onclick="duplicate();"><i class="fas fa-plus"></i></a>
@@ -116,6 +133,10 @@
             <!-- submit button -->
             <div class="row">
                 <div class="center-align col s4 offset-m4">
+                    <!-- cancel button -->
+                    <a href="{{ url_for('get_itinerarys') }}" class="btn-large red darken-1">
+                        Cancel <i class="fas fa-times-circle right"></i>
+                    </a>
                     <button type="submit" class="btn-large light-blue darken-1">
                         Edit Itinerary <i class="fas fa-edit right"></i>
                     </button>

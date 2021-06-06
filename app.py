@@ -143,7 +143,7 @@ def add_itinerary():
             "date": request.form.get("date"),
             "countries": request.form.get("countries"),
             "cities": request.form.get("cities"),
-            "categories": request.form.get("categories"),
+            "trip_type": request.form.get("trip_type"),
             "activity_name": request.form.get("activity_name"),
             "day": request.form.get("day"),
             "time": request.form.get("time"),
@@ -160,8 +160,12 @@ def add_itinerary():
     categories = mongo.db.categories.find().sort("categories", 1)
     countries = mongo.db.countries.find().sort("countries", 1)
     cities = mongo.db.cities.find().sort("cities", 1)
-    return render_template("add_itinerary.html", categories=categories, 
-        countries=countries, cities=cities)
+    return render_template(
+        "add_itinerary.html", 
+        categories=categories, 
+        countries=countries, 
+        cities=cities
+        )
 
 
 @app.route("/edit_itinerary/<itinerary_id>", methods=["GET", "POST"])
@@ -169,7 +173,14 @@ def edit_itinerary(itinerary_id):
     itinerary = mongo.db.itinerarys.find_one({"_id": ObjectId(itinerary_id)})
 
     categories = mongo.db.categories.find().sort("categories", 1)
-    return render_template("edit_itinerary.html", itinerary=itinerary, categories=categories)
+    countries = mongo.db.countries.find().sort("countries", 1)
+    cities = mongo.db.cities.find().sort("cities", 1)
+    return render_template(
+        "edit_itinerary.html", 
+        itinerary=itinerary, 
+        categories=categories, 
+        countries=countries, 
+        cities=cities)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
