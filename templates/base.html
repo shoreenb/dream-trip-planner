@@ -32,7 +32,9 @@
                     <li><a href="{{ url_for('get_account', username=session['user']) }}">Account</a></li>
                     <li><a href="{{ url_for('add_itinerary') }}">Add Itinerary</a></li>
                     <li><a href="{{ url_for('get_itinerarys') }}">Itineraries</a></li>
-                    <li><a href="#">Manage Destinations</a></li>
+                    {% if session.user|lower == "admin"|lower %}
+                    <li><a href="{{ url_for('get_cities') }}">Manage Destinations</a></li>
+                    {% endif %}
                     <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
                     <li><a href="{{ url_for('login') }}">Log In</a></li>
@@ -52,7 +54,9 @@
             <li><a href="{{ url_for('get_account', username=session['user']) }}">Account</a></li>
             <li><a href="{{ url_for('add_itinerary') }}">Add Itinerary</a></li>
             <li><a href="{{ url_for('get_itinerarys') }}">Itineraries</a></li>
-            <li><a href="#">Manage Destinations</a></li>
+            {% if session.user|lower == "admin"|lower %}
+            <li><a href="{{ url_for('get_cities') }}">Manage Destinations</a></li>
+            {% endif %}
             <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
             <li><a href="{{ url_for('login') }}">Log In</a></li>

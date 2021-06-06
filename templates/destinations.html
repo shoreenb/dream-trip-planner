@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="center light-blue-text text-accent-2">
+    Manage Destinations
+</h3>
+
+<div class="row">
+    <div class="col s12 m6 offset-m3">
+        <div class="card-panel">
+            <div class="bs-example col-md-12">
+                <br>
+                <table class="table striped centered">
+                    <thead>
+                        <tr>
+                            <th>Country Name</th>
+                            <th>City Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for city in cities %}
+                        <tr>
+                            <td>{{ city.country }}</td>
+                            <td>{{ city.name }}</td>
+                            <td>
+                                <a href="#" class="btn-small green accent-4">Edit</a>
+                                <a href="#" class="btn-small red darken-1 modal-trigger">Remove</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

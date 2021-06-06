@@ -208,6 +208,26 @@ def delete_itinerary(itinerary_id):
     return redirect(url_for("get_itinerarys"))
 
 
+@app.route("/get_cities")
+def get_cities():
+    cities = list(mongo.db.cities.find().sort("name", 1))
+    return render_template("destinations.html", cities=cities)
+
+
+@app.route("/admin")
+def admin():
+    all_itineraries = list(mongo.db.itinerarys.find())
+    user_itineraries = list(mongo.db.itinerarys.find({
+        "username":session["user"]
+    }))
+
+    return render_template(
+        "itinerary.html", 
+        all_itineraries=all_itineraries,
+        user_itineraries=user_itineraries
+    )
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
