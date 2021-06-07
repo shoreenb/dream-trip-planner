@@ -26,6 +26,13 @@ def get_itinerarys():
     return render_template("itinerary.html", itinerarys=itinerarys)
 
 
+@app.route("/search", methods=["GET","POST"])
+def search():
+    query = request.form.get("query")
+    itinerarys = list(mongo.db.itinerarys.find({"$text": {"$search": query}}))
+    return render_template("itinerary.html", itinerarys=itinerarys)
+
+
 @app.route("/get_home")
 def get_home():
     return render_template("home.html")

@@ -36,6 +36,10 @@ div.input-field.col.s6.s10.offset-m1 {
     padding-top: 1rem;
 }
 
+div.container.row.card-panel.light-blue-text.text-darken-1 {
+    margin: 0;
+}
+
 
 
 /*-------------------- Media Queries ---------------------*/
