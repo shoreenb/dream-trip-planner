@@ -38,6 +38,11 @@ def get_home():
     return render_template("home.html")
 
 
+@app.route("/get_destinations_info")
+def get_destinations_info():
+    return render_template("destinations_info.html")
+
+
 @app.route("/register", methods=["GET","POST"])
 def register():
     if request.method == "POST":
