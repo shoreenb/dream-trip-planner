@@ -12,12 +12,12 @@
         type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <!-- Favicon -->
-    <link rel="icon" sizes="180x180" href="assets/images/favicon_io/android-chrome-192x192.png">
-    <link rel="icon" sizes="180x180" href="assets/images/favicon_io/android-chrome-512x512.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" sizes="180x180" href="static/images/favicon_io/android-chrome-192x192.png">
+    <link rel="icon" sizes="180x180" href="static/images/favicon_io/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/images/favicon-16x16.png">
+    <link rel="manifest" href="static/images/site.webmanifest">
     {% block styles %}
     {% endblock %}
     <title>Dream Trip Planner</title>
@@ -30,8 +30,11 @@
         <nav class="nav-extended navbar-fixed light-blue accent-2">
             <div class="nav-wrapper">
                 <a href="{{ url_for('get_itinerarys') }}" class="brand-logo">
-                    Dream Trip Planner
+
+                    <img class="fullLogo" src="static/images/dtp-logo-sm.png" alt="Dream Trip Planner Logo">
                 </a>
+                <a href="{{ url_for('get_itinerarys') }}" class="brand-logo-text hide-on-med-and-down">Dream Trip
+                    Planner</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('get_home') }}">Home</a></li>
@@ -96,9 +99,16 @@
         <!-- social links -->
         <section class="social light-blue accent-2 white-text center">
             <div class="container">
-                <div class="row">
-                    <img src="" alt="">
-                    <h4>Connect with Us</h4>
+                <div id="social" class="row">
+                    <a href="{{ url_for('get_itinerarys') }}" class="brand-logo">
+
+                        <img class="fullLogo" src="static/images/dtp-logo-sm.png" alt="Dream Trip Planner Logo">
+                    </a><br>
+                    <h4><a href="{{ url_for('get_itinerarys') }}"
+                            class="brand-logo-text hide-on-med-and-down light-blue accent-2 white-text center">Dream
+                            Trip
+                            Planner</a></h4>
+                    <h5>Connect with Us</h5>
                     <p>Follow Dream Trip Planner on social media fron inspiration, insights and offers!</p>
                     <div class="col s12">
                         <a href="https://facebook.com/" class="white-text" target="_blank"><i

@@ -40,25 +40,56 @@ div.container.row.card-panel.light-blue-text.text-darken-1 {
     margin: 0;
 }
 
+nav .brand-logo {
+    position: relative;
+    color: #fff;
+    display: inline-block;
+    font-size: 1.3rem;
+    padding: 0;
+}
 
+nav .brand-logo-text {
+    position: absolute;
+    text-align: center;
+    display: inline-block;
+    color: #fff;
+    font-size: 1.3rem;
+    padding: 0;
+}
+
+div#social.row {
+    padding-top: 20px;
+}
+
+#social {
+    margin-bottom: 0;
+}
 
 /*-------------------- Media Queries ---------------------*/
 @media (max-width: 575px) {
     nav .brand-logo {
-        position: absolute;
+        position: relative;
+        align-items: left;
         color: #fff;
         display: inline-block;
+        font-size: 1.3rem;
+        padding: 0;
+    }
+
+    nav .brand-logo-text {
+        text-align: right;
+        color: #fff;
         font-size: 1.3rem;
         padding: 0;
     }
 }
 
 
-/* Small devices (landscape phones, 576px and up) */
+/* Small devices (landscape phones, 560px and up) */
 @media (min-width: 576px) {
     .trip-type {
         width: 80%;
-        height: 100%;
+        height: 80px;
     }
 
 }
@@ -66,7 +97,7 @@ div.container.row.card-panel.light-blue-text.text-darken-1 {
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     .trip-type {
-        height: 170px;
+        height: 110px;
     }
 
     h3 {
