@@ -61,6 +61,10 @@ div#social.row {
     padding-top: 20px;
 }
 
+section#city div.row {
+    margin-bottom: 0;
+}
+
 #social {
     margin-bottom: 0;
 }
