@@ -23,24 +23,29 @@ mongo = PyMongo(app)
 @app.route("/get_itinerarys")
 def get_itinerarys():
     itinerarys = list(mongo.db.itinerarys.find())
-    return render_template("itinerary.html", itinerarys=itinerarys)
+    return render_template("itineraries/itinerary.html", itinerarys=itinerarys)
 
 
 @app.route("/search", methods=["GET","POST"])
 def search():
     query = request.form.get("query")
     itinerarys = list(mongo.db.itinerarys.find({"$text": {"$search": query}}))
-    return render_template("itinerary.html", itinerarys=itinerarys)
+    return render_template("itineraries/itinerary.html", itinerarys=itinerarys)
 
 
 @app.route("/get_home")
 def get_home():
-    return render_template("home.html")
+    return render_template("pages/navbar/home.html")
 
 
 @app.route("/get_destinations_info")
 def get_destinations_info():
-    return render_template("destinations_info.html")
+    return render_template("pages/destinations_info.html")
+
+
+@app.route("/city")
+def city():
+    return render_template("pages/trip_types/city.html")
 
 
 @app.route("/register", methods=["GET","POST"])
@@ -79,7 +84,7 @@ def register():
         flash("Registration Successful!", "Thank you for registering with Dream Trip Planner")
         return redirect(url_for("get_account", username=session["user"]))
 
-    return render_template("register.html")
+    return render_template("pages/navbar/register.html")
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -109,7 +114,7 @@ def login():
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
-    return render_template("login.html")
+    return render_template("pages/navbar/login.html")
 
 
 # @app.before_request
@@ -127,7 +132,7 @@ def account(username):
         {"username": session["user"]})["username"]
  
     if session["user"]:
-        return render_template("account.html", username=username)
+        return render_template("pages/navbar/account.html", username=username)
     
     return redirect(url_for("login"))
 
@@ -136,7 +141,7 @@ def account(username):
 def get_account():
 
     itinerarys = list(mongo.db.itinerarys.find())
-    return render_template("account.html", itinerarys=itinerarys)
+    return render_template("pages/navbar/account.html", itinerarys=itinerarys)
 
 
 @app.route("/logout")
@@ -173,7 +178,7 @@ def add_itinerary():
     countries = mongo.db.countries.find().sort("countries", 1)
     cities = mongo.db.cities.find().sort("cities", 1)
     return render_template(
-        "add_itinerary.html", 
+        "itineraries/add_itinerary.html", 
         categories=categories, 
         countries=countries, 
         cities=cities
@@ -207,7 +212,7 @@ def edit_itinerary(itinerary_id):
     countries = mongo.db.countries.find().sort("countries", 1)
     cities = mongo.db.cities.find().sort("cities", 1)
     return render_template(
-        "edit_itinerary.html",
+        "itineraries/edit_itinerary.html",
         itinerary=itinerary,
         categories=categories,
         countries=countries,
@@ -223,7 +228,7 @@ def delete_itinerary(itinerary_id):
 @app.route("/get_cities")
 def get_cities():
     cities = list(mongo.db.cities.find().sort("name", 1))
-    return render_template("destinations.html", cities=cities)
+    return render_template("admin/destinations.html", cities=cities)
 
 
 @app.route("/admin")
@@ -235,7 +240,7 @@ def admin():
 
 
     return render_template(
-        "itinerary.html", 
+        "itineraries/itinerary.html", 
         all_itineraries=all_itineraries,
         user_itineraries=user_itineraries
     )
@@ -255,7 +260,7 @@ def add_cities():
     countries = mongo.db.countries.find().sort("country", 1)
     cities = mongo.db.cities.find().sort("name", 1)
     return render_template(
-        "add_destination.html",
+        "admin/add_destination.html",
         countries=countries,
         cities=cities)
 
@@ -272,7 +277,7 @@ def edit_cities(city_id):
         return redirect(url_for("get_cities"))
 
     city = mongo.db.cities.find_one({"_id": ObjectId(city_id)})
-    return render_template("edit_destination.html", city=city)
+    return render_template("admin/edit_destination.html", city=city)
 
 
 @app.route("/delete_cities/<city_id>")
