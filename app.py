@@ -58,7 +58,6 @@ def beach():
 def family():
     return render_template("pages/trip_types/family.html")
 
-
 @app.route("/ski")
 def ski():
     return render_template("pages/trip_types/ski.html")
