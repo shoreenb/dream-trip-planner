@@ -120,6 +120,6 @@ section#city div.row {
 /*Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
     .trip-type {
-        height: 140px;
+        height: 190px;
     }
 }

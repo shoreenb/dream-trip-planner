@@ -19,6 +19,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 @app.route("/")
 @app.route("/get_itinerarys")
 def get_itinerarys():
@@ -26,7 +27,7 @@ def get_itinerarys():
     return render_template("itineraries/itinerary.html", itinerarys=itinerarys)
 
 
-@app.route("/search", methods=["GET","POST"])
+@app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
     itinerarys = list(mongo.db.itinerarys.find({"$text": {"$search": query}}))
@@ -48,28 +49,28 @@ def city():
     return render_template("pages/trip_types/city.html")
 
 
-app.route("/beach")
+@app.route("/beach")
 def beach():
     return render_template("pages/trip_types/beach.html")
 
 
-app.route("/family")
+@app.route("/family")
 def family():
     return render_template("pages/trip_types/family.html")
 
 
-app.route("/ski")
+@app.route("/ski")
 def ski():
     return render_template("pages/trip_types/ski.html")
 
 
-@app.route("/register", methods=["GET","POST"])
+@app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
         # check if username already exists in database
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-     
+
         if existing_user:
             flash("Sorry, this username already exists!")
             return redirect(url_for("register"))
@@ -96,7 +97,10 @@ def register():
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
-        flash("Registration Successful!", "Thank you for registering with Dream Trip Planner")
+        flash(
+            "Registration Successful!",
+            "Thank you for registering with Dream Trip Planner"
+            )
         return redirect(url_for("get_account", username=session["user"]))
 
     return render_template("pages/navbar/register.html")
@@ -112,12 +116,17 @@ def login():
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(
-                        request.form.get("username")))
-                    return redirect(url_for(
-                        "get_account", username=session["user"]))
+                existing_user["password"],
+                request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+
+                flash("Welcome, {}".format(
+                    request.form.get("username")))
+
+                return redirect(url_for(
+                    "get_account",
+                    username=session["user"])
+                    )
 
             else:
                 # invalid password match
@@ -137,19 +146,27 @@ def account(username):
     # retrieve the session user's username from the database
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
- 
+
     if session["user"]:
         return render_template("pages/navbar/account.html", username=username)
-    
+
     return redirect(url_for("login"))
 
 
 @app.route("/get_account", methods=["GET", "POST"])
 def get_account():
-    itinerarys = list(mongo.db.itinerarys.find({"created_by": session["user"]}))
+    itinerarys = list(
+        mongo.db.itinerarys.find(
+            {"created_by": session["user"]}
+            )
+        )
     user = mongo.db.users.find_one({"username": session["user"]})
 
-    return render_template("pages/navbar/account.html", user=user, itinerarys=itinerarys)
+    return render_template(
+        "pages/navbar/account.html",
+        user=user,
+        itinerarys=itinerarys
+        )
 
 
 @app.route("/logout")
@@ -186,9 +203,9 @@ def add_itinerary():
     countries = mongo.db.countries.find().sort("countries", 1)
     cities = mongo.db.cities.find().sort("cities", 1)
     return render_template(
-        "itineraries/add_itinerary.html", 
-        categories=categories, 
-        countries=countries, 
+        "itineraries/add_itinerary.html",
+        categories=categories,
+        countries=countries,
         cities=cities
         )
 
@@ -219,12 +236,14 @@ def edit_itinerary(itinerary_id):
     categories = mongo.db.categories.find().sort("categories", 1)
     countries = mongo.db.countries.find().sort("countries", 1)
     cities = mongo.db.cities.find().sort("cities", 1)
+
     return render_template(
         "itineraries/edit_itinerary.html",
         itinerary=itinerary,
         categories=categories,
         countries=countries,
         cities=cities)
+
 
 @app.route("/delete_itinerary/<itinerary_id>")
 def delete_itinerary(itinerary_id):
@@ -243,12 +262,11 @@ def get_cities():
 def admin():
     all_itineraries = list(mongo.db.itinerarys.find())
     user_itineraries = list(mongo.db.itinerarys.find({
-        "username":session["user"]
+        "username": session["user"]
     }))
 
-
     return render_template(
-        "itineraries/itinerary.html", 
+        "itineraries/itinerary.html",
         all_itineraries=all_itineraries,
         user_itineraries=user_itineraries
     )
