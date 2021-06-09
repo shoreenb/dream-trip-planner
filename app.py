@@ -139,9 +139,10 @@ def account(username):
 
 @app.route("/get_account", methods=["GET", "POST"])
 def get_account():
+    itinerarys = list(mongo.db.itinerarys.find({"created_by": session["user"]}))
+    user = mongo.db.users.find_one({"username": session["user"]})
 
-    itinerarys = list(mongo.db.itinerarys.find())
-    return render_template("pages/navbar/account.html", itinerarys=itinerarys)
+    return render_template("pages/navbar/account.html", user=user, itinerarys=itinerarys)
 
 
 @app.route("/logout")

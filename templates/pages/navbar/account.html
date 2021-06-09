@@ -6,13 +6,13 @@
     <div class="col s12 m6 offset-m3">
         <div class="card-panel">
             <h3 class="center-align light-blue-text text-accent-2">
-                {{ username }}'s Profile
+                {{ user.first }}'s Profile
             </h3>
 
-            <p>Username: {{ username }}</p>
-            <p>First Name: {{ first }}</p>
-            <p>Last Name: {{ last }}</p>
-            <p>Date Created: {{ date_created }}</p>
+            <p>Username: {{ user.username }}</p>
+            <p>First Name: {{ user.first }}</p>
+            <p>Last Name: {{ user.last }}</p>
+            <p>Created: {{ user.date_created }}</p>
 
 
             <h3 class="center-align light-blue-text text-accent-2">
