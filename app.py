@@ -48,6 +48,21 @@ def city():
     return render_template("pages/trip_types/city.html")
 
 
+app.route("/beach")
+def beach():
+    return render_template("pages/trip_types/beach.html")
+
+
+app.route("/family")
+def family():
+    return render_template("pages/trip_types/family.html")
+
+
+app.route("/ski")
+def ski():
+    return render_template("pages/trip_types/ski.html")
+
+
 @app.route("/register", methods=["GET","POST"])
 def register():
     if request.method == "POST":
@@ -115,14 +130,6 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("pages/navbar/login.html")
-
-
-# @app.before_request
-# def before_request():
-#     loggedIn = True if 'user' in session else False
-#     if session["user"] == loggedIn:
-#         session["user"].last_seen = datetime.utcnow()
-#         db.session.commit()
 
 
 @app.route("/account/<username>", methods=["GET", "POST"])

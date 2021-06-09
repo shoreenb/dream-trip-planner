@@ -74,3 +74,7 @@
          find('textarea').val('').end.appendTo('#itinerary_card_new.card-panel');
      });
  });
+
+ function duplicate() {
+     $('#card_p #card_c').clone().find('input').val('').end().find('textarea').val('').end().appendTo('#card_n');
+ }
