@@ -40,21 +40,19 @@ div.container.row.card-panel.light-blue-text.text-darken-1 {
     margin: 0;
 }
 
-nav .brand-logo {
-    position: relative;
-    color: #fff;
-    display: inline-block;
-    font-size: 1.3rem;
-    padding: 0;
+nav.nav-extended .nav-wrapper {
+    min-height: 63px;
+    height: auto;
 }
+
 
 nav .brand-logo-text {
     position: absolute;
-    text-align: center;
+    text-align: left;
     display: inline-block;
     color: #fff;
     font-size: 1.3rem;
-    padding: 0;
+    padding-left: 80px;
 }
 
 div#social.row {
@@ -70,24 +68,6 @@ section#city div.row {
 }
 
 /*-------------------- Media Queries ---------------------*/
-@media (max-width: 575px) {
-    nav .brand-logo {
-        position: relative;
-        align-items: left;
-        color: #fff;
-        display: inline-block;
-        font-size: 1.3rem;
-        padding: 0;
-    }
-
-    nav .brand-logo-text {
-        text-align: right;
-        color: #fff;
-        font-size: 1.3rem;
-        padding: 0;
-    }
-}
-
 
 /* Small devices (landscape phones, 560px and up) */
 @media (min-width: 576px) {
@@ -95,7 +75,6 @@ section#city div.row {
         width: 80%;
         height: 80px;
     }
-
 }
 
 /* Medium devices (tablets, 768px and up) */
