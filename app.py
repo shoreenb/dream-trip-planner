@@ -21,6 +21,11 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+@app.route("/get_home")
+def get_home():
+    return render_template("pages/navbar/home.html")
+
+
 @app.route("/get_itinerarys")
 def get_itinerarys():
     itinerarys = list(mongo.db.itinerarys.find())
@@ -32,11 +37,6 @@ def search():
     query = request.form.get("query")
     itinerarys = list(mongo.db.itinerarys.find({"$text": {"$search": query}}))
     return render_template("itineraries/itinerary.html", itinerarys=itinerarys)
-
-
-@app.route("/get_home")
-def get_home():
-    return render_template("pages/navbar/home.html")
 
 
 @app.route("/get_destinations_info")
@@ -57,6 +57,7 @@ def beach():
 @app.route("/family")
 def family():
     return render_template("pages/trip_types/family.html")
+
 
 @app.route("/ski")
 def ski():
@@ -115,8 +116,8 @@ def login():
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                existing_user["password"],
-                request.form.get("password")):
+                existing_user["password"], request.form.get("password")
+                ):
                 session["user"] = request.form.get("username").lower()
 
                 flash("Welcome, {}".format(
