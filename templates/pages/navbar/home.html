@@ -65,82 +65,81 @@
 </div>
 <!-- popular desitinations -->
 <section id="popular">
-    <h4 class="center"><span class="light-blue-text">Popular</span> Destinations</h4>
+
     <div class="container">
-        <div class="row">
 
-            <div class="col s12 m4">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="static/images/bora-bora.jpg" alt="Bora Bora Image">
-                        <span class="card-title">Bora Bora</span>
-                    </div>
-                    <div class="card-content">
-                        <p>Bora Bora is a major international tourist destination, famous for its seaside (and even
-                            offshore) luxury resorts.</p>
-                    </div>
-                    <div class=" card-action">
-                        {% if session.user %}
-                        <a class="light-blue-text text-accent-3" href="{{ url_for('get_destinations_info') }}">See More
-                            ></a>
-                        {% else %}
-                        <a class="light-blue-text text-accent-3" href="{{ url_for('login') }}">See More ></a>
-                        {% endif %}
-                    </div>
+        <h4 class="center"><span class="light-blue-text">Popular</span> Destinations</h4>
+        <div class="col s12 m4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="static/images/bora-bora.jpg" alt="Bora Bora Image">
+                    <span class="card-title">Bora Bora</span>
                 </div>
-            </div>
-
-            <div class="col s12 m4">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="static/images/burj-khalifa.jpg" alt="Burj Khalifa Image">
-                        <span class="card-title">Dubai</span>
-                    </div>
-                    <div class="card-content">
-                        <p>Dubai has been called the "shopping capital of the Middle East". Dubai alone has more
-                            than 70 shopping centres, including the world's largest shopping centre, Dubai Mall.</p>
-                    </div>
-                    <div class="card-action">
-                        {% if session.user %}
-                        <a class="light-blue-text text-accent-3" href="{{ url_for('get_destinations_info') }}">See More
-                            ></a>
-                        {% else %}
-                        <a class="light-blue-text text-accent-3" href="{{ url_for('login') }}">See More ></a>
-                        {% endif %}
-                    </div>
+                <div class="card-content">
+                    <p>Bora Bora is a major international tourist destination, famous for its seaside (and even
+                        offshore) luxury resorts.</p>
                 </div>
-            </div>
-
-            <div class="col s12 m4">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="static/images/louvre.jpg" alt="Louvre Image">
-                        <span class="card-title">France</span>
-                    </div>
-                    <div class="card-content">
-                        <p>The most popular tourist sites in France include: Eiffel Tower, Château
-                            de Versailles, Muséum national d'Histoire naturelle, Pont du Gard
-                            and Arc de Triomphe </p>
-                    </div>
-                    <div class="card-action">
-                        {% if session.user %}
-                        <a class="light-blue-text text-accent-3" href="{{ url_for('get_destinations_info') }}">See More
-                            ></a>
-                        {% else %}
-                        <a class="light-blue-text text-accent-3" href="{{ url_for('login') }}">See More ></a>
-                        {% endif %}
-                    </div>
+                <div class=" card-action">
+                    {% if session.user %}
+                    <a class="light-blue-text text-accent-3" href="{{ url_for('get_destinations_info') }}">See More
+                        ></a>
+                    {% else %}
+                    <a class="light-blue-text text-accent-3" href="{{ url_for('login') }}">See More ></a>
+                    {% endif %}
                 </div>
             </div>
         </div>
+
+        <div class="col s12 m4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="static/images/burj-khalifa.jpg" alt="Burj Khalifa Image">
+                    <span class="card-title">Dubai</span>
+                </div>
+                <div class="card-content">
+                    <p>Dubai has been called the "shopping capital of the Middle East". Dubai alone has more
+                        than 70 shopping centres, including the world's largest shopping centre, Dubai Mall.</p>
+                </div>
+                <div class="card-action">
+                    {% if session.user %}
+                    <a class="light-blue-text text-accent-3" href="{{ url_for('get_destinations_info') }}">See More
+                        ></a>
+                    {% else %}
+                    <a class="light-blue-text text-accent-3" href="{{ url_for('login') }}">See More ></a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="static/images/louvre.jpg" alt="Louvre Image">
+                    <span class="card-title">France</span>
+                </div>
+                <div class="card-content">
+                    <p>The most popular tourist sites in France include: Eiffel Tower, Château
+                        de Versailles, Muséum national d'Histoire naturelle, Pont du Gard
+                        and Arc de Triomphe </p>
+                </div>
+                <div class="card-action">
+                    {% if session.user %}
+                    <a class="light-blue-text text-accent-3" href="{{ url_for('get_destinations_info') }}">See More
+                        ></a>
+                    {% else %}
+                    <a class="light-blue-text text-accent-3" href="{{ url_for('login') }}">See More ></a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
 
 <!-- type of trip -->
 <section id="home_trip" class="light-blue lighten-5">
-    <h4 class="center">Type of <span class="light-blue-text">Trip</span></h4>
     <div class="container">
-        <div class="row">
+        <div class="section_row row">
             <h4 class="center">Type of <span class="light-blue-text">Trip</span></h4>
             <div class="col s12 m6 l6">
                 <div class="card">
