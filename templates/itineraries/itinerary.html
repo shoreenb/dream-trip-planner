@@ -6,7 +6,7 @@
 </h3>
 
 <div class="row">
-    <div class="col s12 offset-m2">
+    <div class="col s12 m10 offset-m2">
         <div class="container search row card-panel light-blue-text text-darken-1">
             <form action="{{ url_for('search') }}" method="post" class="col s12">
                 <div class="row valign-wrapper center-align">
@@ -28,7 +28,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col s12 offset-m2">
+    <div class="col s12 m10 offset-m2">
         {% if itinerarys|length > 0 %}
         <ul class="container collapsible popout">
             {% for item in itinerarys %}

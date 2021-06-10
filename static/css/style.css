@@ -83,25 +83,35 @@ hr {
         width: 100%;
     }
 
-    .collapsible-header.center.white-text.light-blue.accent-2 {
-        padding: 0.2rem;
-    }
-
-    ul.container.collapsible.popout {
+    div.collapsible-header.center.white-text.light-blue.accent-2 {
+        padding: 0rem;
         margin: 0;
     }
 
-    .itinerary-btn,
-        {
+    .collapsible-header {
+        padding: 0;
+    }
+
+    .container.collapsible.popout {
+        margin: 0;
+        padding: 0;
+    }
+
+    .itinerary-btn {
         padding: 0;
         text-align: center;
     }
 
-    .form.col.s12 {
-        width: 95%;
+    div.itinerary-btn {
+        padding-right: 0;
     }
 
-    div.input-field.col.s4.offset-m4 {
+    .form.col.s12 {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .row.div.input-field.col {
         width: 90%;
         margin-left: 20px;
         margin-right: 20px;
@@ -137,6 +147,40 @@ hr {
     h3 {
         font-size: 2.8rem;
     }
+
+    .container {
+        width: 100%;
+    }
+
+    /* .itinerary-btn {
+        padding: 0;
+        text-align: center;
+    } */
+
+    .form.col.s12 {
+        width: 95%;
+    }
+
+    div.input-field.col.s4.offset-m4 {
+        width: 90%;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    /* div#card_p.container {
+        width: 100%;
+    } */
+
+    /* div#itinerary_card.row {
+        margin-left: 20px;
+        margin-right: 20px;
+    } */
+
+    /* div#card_c.row {
+        width: 100%;
+        padding: 30px;
+        margin: 0;
+    } */
 
 }
 
