@@ -2,7 +2,7 @@
 {% block content %}
 
 <!-- slider-->
-<section class="slider">
+<section class="slider light-blue lighten-5">
     <ul class="slides">
         <li>
             <img src="static/images/maldives.jpg" alt="Maldives Image">
@@ -25,42 +25,46 @@
         </li>
         <li>
             {% if session.user %}
-            <img src="static/images/taj-mahal.jpg" alt="Taj Mahal Image">
+            <img src="static/images/taj-mahal.jpg" alt="Cancun Image">
             <div class="hide-on-small-only caption right-align">
                 <h3>Start Planning Your Dream Trip NOW!</h3>
             </div>
+
+            <!-- new itinerary button -->
+            <div class="row">
+                <button type="submit" class="center-align col s12 m4 offset-m4 btn-large light-blue accent-2">
+                    Start Planning <i class="fas fa-sign-in-alt"></i>
+                </button>
+            </div>
         </li>
-        <!-- new itinerary button -->
-        <div class="row">
-            <button type="submit" class="center-align col s12 m4 offset-m4 btn-large light-blue accent-2">
-                Start Planning <i class="fas fa-sign-in-alt"></i>
-            </button>
-        </div>
-        {% else %}
         <li>
+            {% else %}
             <img src="static/images/taj-mahal.jpg" alt="Taj Mahal Image">
             <div class="hide-on-small-only caption right-align">
                 <h3>Start Planning Your Dream Trip NOW!</h3>
             </div>
         </li>
-        <!-- registration button -->
-        <div class="row">
-            <a href="{{ url_for('register') }}" class="hide-on-small-only register-btn center-align col s12 m4 offset-m4 btn-large light-blue
-                            accent-2">
-                Register<i class="fas fa-sign-in-alt"></i>
-            </a>
-        </div>
-        <div class="row">
-            <div class="col s12">
-                <h5 class="hide-on-small-only white-text text-lighten-1 center-align">
-                    Already Registered?
-                    <a href="{{ url_for('login') }}" class="light-blue-text text-accent-1">Log In</a>
-                </h5>
-            </div>
-            {% endif %}
-        </div>
-        </div>
     </ul>
+</section>
+<section class="light-blue lighten-5">
+    <br>
+    <!-- registration button -->
+    <div class="row">
+        <a href="{{ url_for('register') }}" class="hide-on-small-only register-btn center-align col s12 m4 offset-m4 btn-large light-blue
+                            accent-2">
+            Register<i class="fas fa-sign-in-alt"></i>
+        </a>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <h6 class="hide-on-small-only center-align">
+                Already Registered?
+                <a href="{{ url_for('login') }}" class="light-blue-text text-accent-4">Log In</a>
+            </h6>
+        </div>
+        {% endif %}
+    </div>
+    <hr>
 </section>
 <div class="container">
     <div class="row">

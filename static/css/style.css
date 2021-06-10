@@ -63,6 +63,10 @@ div.section_row.row {
     margin-bottom: 0px;
 }
 
+hr {
+    width: 50%;
+}
+
 /*-------------------- Media Queries ---------------------*/
 
 /* Small devices (landscape phones, 560px and up) */
