@@ -79,6 +79,44 @@ hr {
         width: 80%;
         height: 80px;
     }
+
+    .container {
+        width: 100%;
+    }
+
+    .collapsible-header.center.white-text.light-blue.accent-2 {
+        padding: 0.2rem;
+    }
+
+    ul.container.collapsible.popout {
+        margin: 0;
+    }
+
+    .itinerary-btn {
+        padding: 0;
+        text-align: center;
+    }
+
+    .form.col.s12 {
+        width: 95%;
+    }
+
+    div.input-field.col.s4.offset-m4 {
+        width: 90%;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    div#itinerary_card.row,
+    div#card_c.row {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    div.center-align.col.s4.offset-m4 {
+        width: 100%;
+    }
+
 }
 
 /* Medium devices (tablets, 768px and up) */
