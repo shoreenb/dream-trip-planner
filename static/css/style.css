@@ -138,6 +138,12 @@ hr {
 
 }
 
+@media only screen and (min-width: 601px) {
+    .row .col.offset-m2 {
+        margin-left: 8%;
+    }
+}
+
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     .trip-type {
@@ -152,10 +158,9 @@ hr {
         width: 100%;
     }
 
-    /* .itinerary-btn {
-        padding: 0;
-        text-align: center;
-    } */
+    .row .col.offset-m2 {
+        margin-left: 16%;
+    }
 
     .form.col.s12 {
         width: 95%;
@@ -166,22 +171,6 @@ hr {
         margin-left: 20px;
         margin-right: 20px;
     }
-
-    /* div#card_p.container {
-        width: 100%;
-    } */
-
-    /* div#itinerary_card.row {
-        margin-left: 20px;
-        margin-right: 20px;
-    } */
-
-    /* div#card_c.row {
-        width: 100%;
-        padding: 30px;
-        margin: 0;
-    } */
-
 }
 
 /* Large devices (desktops, 992px and up) */
