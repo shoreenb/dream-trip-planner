@@ -38,7 +38,7 @@
                         <i class="fas fa-caret-down"></i>
                     </div>
                     <div class="itinerary-btn">
-                        {% if session.user|lower == item.created_by|lower, "admin" %}
+                        {% if (session.user|lower == item.created_by|lower) or (session.user|lower == "admin") %}
                         <!-- edit button -->
                         <a href="{{ url_for('edit_itinerary', itinerary_id=item._id)}}"
                             class="btn-small green accent-4">Edit</a>
