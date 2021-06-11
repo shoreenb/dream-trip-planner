@@ -29,7 +29,7 @@
                     <div class="input-field col s12">
                         <i class="fas fa-globe-africa prefix light-blue-text text-accent-2"></i>
                         <select id="countries" name="countries" class="validate" required>
-                            <option value="" selected>Choose Country</option>
+                            <option value="" disabled selected>Choose Country</option>
                             {% for country in countries %}
                             <option value="{{ country.name }}">{{ country.name }}</option>
                             {% endfor %}
@@ -42,7 +42,7 @@
                     <div class="input-field col s12">
                         <i class="fas fa-city prefix light-blue-text text-accent-2"></i>
                         <select id="cities" name="cities" class="validate" required>
-                            <option value="" selected>Choose City</option>
+                            <option value="" disabled selected>Choose City</option>
                             {% for city in cities %}
                             <option value="{{ city.name}}">{{ city.name }}</option>
                             {% endfor %}
@@ -55,7 +55,7 @@
                     <div class="input-field col s12">
                         <i class="fas fa-suitcase prefix light-blue-text text-accent-2"></i>
                         <select id="categories" name="categories" class="validate" required>
-                            <option value="" selected>Choose Trip Type</option>
+                            <option value="" disabled selected>Choose Trip Type</option>
                             {% for category in categories %}
                             <option value="{{ category.trip_type }}">{{ category.trip_type }}</option>
                             {% endfor %}

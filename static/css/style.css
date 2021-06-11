@@ -73,6 +73,21 @@ hr {
 
 /*-------------------- Media Queries ---------------------*/
 
+/*Extra Small devices (landscape phones, 560px and up) */
+@media (max-width: 576px) {
+    .itinerary-btn {
+        padding-right: 0px;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .card-panel {
+        padding-top: 24px;
+    }
+}
+
 /* Small devices (landscape phones, 560px and up) */
 @media (min-width: 576px) {
     .trip-type {
