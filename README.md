@@ -353,7 +353,7 @@ This project utilises HTML, CSS and JavaScript and Python programming languages.
 
 ## [Testing](#testing)
 
-Details on Testing can be found in the separate [testing.md] file
+Details on Testing can be found in the separate [testing.md](testing.md) file
 
 [Back to contents](#contents)
 
