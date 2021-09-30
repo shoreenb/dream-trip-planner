@@ -4,7 +4,7 @@
 
 ## <h2 align="center">An Itinerary Manager for planning your dream trips</h2>
 
-<p align="center">[Bitcoin Basics] is an informative website, devised for those who want to learn about this new (and often overwhelming) technology. Features include: a beginners guide demystifying Bitcoin,  current market rates and a clean, minimalist design that enables a newcomer to easily navigate the pages.</p>
+<p align="center">[Dream Trip Planner](https://dream-trip-planner-project.herokuapp.com/) is a dream trip itinerary planner as well as a source of information for world destinations. It was designed to provide the tools needed for the target audience to research their dream destination, plan daily activities and refer back to their planned itineraries during their trip</p>
 
 ![Mock Up Image](static/images/mock-ups/mock-up.png)
 
@@ -55,7 +55,6 @@
 6. <a name="deploy">Deployment</a>
 
    - <a name="heroku">Heroku Deployment</a>
-
    - <a name="local">How to run this project locally</a>
 
 7. <a name="credits">Credits</a>
@@ -73,18 +72,17 @@ The main goal of Dream Trip Planner is to provide a resource for someone:
 
 - To have somewhere to keep a list of planned activities that can easily be referred to when required.
 - To have a database of destinations that can be researched as inspiration for the next trip.
-- To be able to organise each item on the itinerary by time, date, day of the trip, and the length of time it takes down to the minute
+- To be able to organise each item on the itinerary by time, date, day of the trip, and the length of time it takes down to the minute.
 
 #### [Visitor Goals](#visitor)
 
 The target audience for this website is a user that:
 
 - Is currently unable to book a trip but would like to plan one for the future (like we have not been able to travel abroad due to coronavirus for example).
-
 - Has an upcoming trip and they would like to organise their daily activities.
 - Wants to research potential trips and find out the key information about those destinations.
 - Wants inspiration by looking at destinations they might not have considered previously.
-- Does not like leaving things to chance and wants an easy way to know where they should be  or what they should be doing next.
+- Does not like leaving things to chance and wants an easy way to know where they should be or what they should be doing next.
 - Wants to plan a trip they have always wanted to go on
 
 [Back to contents](#contents)
@@ -100,12 +98,12 @@ As a developer the aim is to create a web application that will:
 
 #### [User Stories](#user)
 
-As a new user of Dream Trip Planner,  I want:
+As a new user of Dream Trip Planner, I want:
 
-1. A collections of destinations organised in a way that I can easily choose the type of trip that I want to go on and  find information about the relevant destinations.
+1. A collections of destinations organised in a way that I can easily choose the type of trip that I want to go on and find information about the relevant destinations.
 2. Clear navigation to easily maneuver through the site.
 3. To be able to create an new itinerary easily.
-4. To be able to my registration details  in my account.
+4. To be able to my registration details in my account.
 5. To contact or follow Dream Trip Planner on social media platforms.
 
 As someone who has previously signed up with Dream Trip Planner I want:
@@ -249,7 +247,7 @@ The subtle grey of the navbar hover effect and box shadows on the cards and butt
 
 1. ##### Email authentication and email notification of upcoming trips
 
-   - As an added layer of confirmation, Implementing email authentication of user account before registration is complete would verify details. 
+   - As an added layer of confirmation, implementing email authentication of user account before registration is complete would verify details. 
    - It would also be useful to email confirmation of a successful registration and notify users that there is an itinerary with a date that is arriving soon.
 
 2. ##### Filter trips
@@ -262,11 +260,11 @@ The subtle grey of the navbar hover effect and box shadows on the cards and butt
 
    - Automatically updating the popular destinations from the destinations that all users are choosing would be a useful insight, rather than the current method which is biased, manual updating by admin. 
 
-4. **Add several activities to one Itinerary**
+4. ##### Add several activities to one Itinerary
 
    - Attempted this for several days but was unable to get it to work. Rather than dedicating more time on this feature, I made the decision to remove the relevant code to return to at a future date when my understanding is more advanced.
 
-5. **Find tourist attractions at destination**
+5. ##### Find tourist attractions at destination
 
    - In future users could find information on popular tourist attractions, which they can use to add to their itineraries
 
