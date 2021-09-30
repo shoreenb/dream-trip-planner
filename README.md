@@ -14,61 +14,51 @@
 
 ## [Table of Contents](#contents)
 
-1. <a name="UX">UX</a>
+1. [UX](#ux)
+   - [Project Goals](#project)
+   - [Visitor Goals](#visitor)
+   - [Developer Goals](#developer)
+   - [User Stories](#user)
+   - [Design](#design)
+   - [Wireframes](#wireframes)
    
-   - <a name ="project">Project Goals</a>
-     - <a name="visitor">Visitor Goals</a>
-     - <a name="developer">Developer Goals</a>
-   - <a name="user">User Stories</a>
-   - <a name="design">Design</a>
-   - <a name="wireframes">Wireframes</a>
-   
-2. <a name="features">Features</a>
+2. [Features](#features)
+   - [Existing Features](#existing)
+      - [Unregistered Visitors](#unreg)
+         - [Public Home](#unregHome)
+         - [Register](#register)
+      - [Registered Visitors](#regVis)
+         - [Login](#login)
+         - [Account](#acct)
+         - [Home](#reg-home)
+         - [Add Itinerary](#add)
+         - [Itineraries](#itin)
+         - [Edit Itineraries](#edit)
+         - [Remove Itineraries](#remove)
+         - [Access](#access)
+         - [Manage Destinations](#manage)
+   - [Features Left To Implement](#featuresLeft)
 
-   - <a name="existing">Existing Features</a>
+3. [Information Architecture](#info)
 
-     <a name="unreg">Unregistered Visitors</a>
+4. [Technologies Used](#technologies)
+   - [Collections Data Structure](#coll)
 
-     - <a name="unregHome">Home</a>
-     - <a name="register">Register</a>
+5. [Testing](#testing)
 
-     <a name="regVis">Registered Visitors</a>
+6. [Deployment](#deploy)
+   - [Heroku Deployment](#heroku)
+   - [How to run this project locally](#local)
 
-     - <a name="login">Login</a>
-     - <a name="acct">Account</a>
-     - <a name="reg-home">Home</a>
-     - <a name="add">Add Itinerary</a>
-     - <a name="itin">Itineraries</a>
-     - <a name="edit">Edit Itineraries</a>
-     - <a name="remove">Remove Itineraries</a>
-     - <a name="access">Access</a>
-     - <a name="manage">Manage Destinations</a>
+7. [Credits](#credits)
+   - [Content](#content)
+   - [Media](#media)
+   - [Code](#code)
+   - [Acknowledgements](#acknowledge)
 
-   - <a name="featuresLeft">Features Left To Implement</a>
+## UX
 
-3. <a name="info">Information Architecture</a>
-
-4. <a name="technologies">Technologies Used</a>
-
-   - <a name="coll">Collections Data Structure</a>
-
-5. <a name="testing">Testing</a>
-
-6. <a name="deploy">Deployment</a>
-
-   - <a name="heroku">Heroku Deployment</a>
-   - <a name="local">How to run this project locally</a>
-
-7. <a name="credits">Credits</a>
-
-   - <a name="content">Content</a>
-   - <a name="media">Media</a>
-   - <a name="code">Code</a>
-   - <a name="acknowledge">Acknowledgements</a>
-
-## [UX](#ux)
-
-### [Project Goals](#project)
+### Project Goals
 
 The main goal of Dream Trip Planner is to provide a resource for someone:
 
@@ -76,7 +66,7 @@ The main goal of Dream Trip Planner is to provide a resource for someone:
 - To have a database of destinations that can be researched as inspiration for the next trip.
 - To be able to organise each item on the itinerary by time, date, day of the trip, and the length of time it takes down to the minute.
 
-#### [Visitor Goals](#visitor)
+#### Visitor Goals
 
 The target audience for this website is a user that:
 
@@ -89,7 +79,7 @@ The target audience for this website is a user that:
 
 [Back to contents](#contents)
 
-#### [Developer Goals](#developer)
+#### Developer Goals
 
 As a developer the aim is to create a web application that will:
 
@@ -98,7 +88,7 @@ As a developer the aim is to create a web application that will:
 
 [Back to contents](#contents)
 
-#### [User Stories](#user)
+#### User Stories
 
 As a new user of Dream Trip Planner, I want:
 
@@ -119,7 +109,7 @@ As someone who has previously signed up with Dream Trip Planner I want:
 
 [Back to contents](#contents)
 
-#### [Design](#design)
+#### Design
 
 Taking a trip usually inspires serene images so the colour scheme and design choices have been chosen to replicate that cool, calm vibe.
 
@@ -141,7 +131,7 @@ The subtle grey of the navbar hover effect and box shadows on the cards and butt
 
 [Back to contents](#contents)
 
-#### [Wireframes](#wireframes)
+#### Wireframes
 
 - [Home](static/images/wireframes/home.pdf)
 - [Account](static/images/wireframes/account.pdf)
@@ -152,26 +142,24 @@ The subtle grey of the navbar hover effect and box shadows on the cards and butt
 
 [Back to contents](#contents)
 
-## [Features](#features)
+## Features
 
-#### [Existing Features](#existing)
+#### Existing Features
 
-#### [Unregistered Visitor](#unreg)
+#### Unregistered Visitor
 
-##### [Home](#unregHome) 
+##### Public Home
 
 ![Home](static/images/mock-ups/home-mock.png)
 
 - On arrival at the site, the visitor will see a slider of some enticing holiday destinations with a large register button and text prompting them to start planning a trip and register or log In. 
-
-
 
 ![Cards](static/images/mock-ups/home-cards.png)
 
 - There is are cards underneath the slider showing popular destinations and types of trips but as a user that is logged in, the links under the cards only lead to the login page.
 - The home page is the only part of the site you can see apart from the login page.
 
-##### [Register](#reg)
+##### Register
 
 ![Register](static/images/mock-ups/reg-mock.png)
 
@@ -179,15 +167,15 @@ The subtle grey of the navbar hover effect and box shadows on the cards and butt
 
 [Back to contents](#contents)
 
-#### [Registered Visitor](#regVis)
+#### Registered Visitor
 
-1. ##### [Log In](#login)
+1. ##### Log In
 
    ##### ![Log In](static/images/mock-ups/login-mock.png)
 
    - A registered visitor can log in to see their account and gain access to the other features of the site.
 
-2. ##### [Account](#acct)
+2. ##### Account
 
    ![Account](static/images/mock-ups/acct-mock.png)
 
@@ -195,7 +183,7 @@ The subtle grey of the navbar hover effect and box shadows on the cards and butt
 
    - Once logged in they are directly sent to the account page with a personalised welcome message.
 
-3. ##### [Home](#reg-home)
+3. ##### Home
 
    ![User Home](static/images/mock-ups/dest-home.png)
 
@@ -205,39 +193,39 @@ The subtle grey of the navbar hover effect and box shadows on the cards and butt
 
    - The visitor can now also click on the card link for each type of trip to find destination cards related to that title. This will help the visitor to narrow the type of destination they would like to plan an itinerary for. 
 
-4. [**Add Itinerary**](#add)
+4. ##### Add Itinerary
 
    ![Add Itinerary](static/images/mock-ups/add-itin-mock.png)
 
    - In order to create a new itinerary, the visitor can click on 'Add Itinerary' in the navbar and complete the fields. Once submitted, the new itinerary is added to the Itineraries page and the name of the itinerary is added to the visitors account page
 
-5. [**Itineraries**](#itin)
+5. ##### Itineraries
 
    ![Itineraries](static/images/mock-ups/non-admin.png)
 
    - Once the itinerary is created, it is added to the overall list of itineraries. The details can be viewed by clicking on the accordion headers. 
    - There is also a search function to search the itineraries, which will be useful to quickly find an itinerary once the list begins to grow.
 
-6. [**Edit Itineraries**](#edit)
+6. ##### Edit Itineraries
 
    ![Edit Itinerary](static/images/mock-ups/edit-mock.png)
 
    - The visitor can edit an itinerary by clicking on the 'edit' button, which will prefill the fields and allow the visitor to make the necessary amendments.
    - If the visitor does not wish to make any changes to the itinerary, they can just press the cancel button and return to the itineraries page.
 
-7. [**Remove Itineraries**](remove)
+7. ##### Remove Itineraries
 
    ![Remove Itinerary](static/images/mock-ups/delete-mock.png)
 
    - The visitor can delete an itinerary that they have created but just incase they accidentally click the 'Remove' button, there is a modal that will pop up as defensive programming to ensure and confirm that the visitor wants to perform an irreversible action.
 
-8. [**Access**](#access)
+8. ##### Access
 
    ![Admin Access](static/images/mock-ups/admin-access.png)
 
    - Admin is the only one to have access to edit or remove itineraries from all visitors. All other users only have access to edit or remove the itineraries that they have created as seen in the feature 7, itineraries.
 
-9. [**Manage Destinations**](#manage)
+9. ##### Manage Destinations
 
    ![Admin Access](static/images/mock-ups/manage-mock.png)
 
@@ -245,7 +233,7 @@ The subtle grey of the navbar hover effect and box shadows on the cards and butt
 
 [Back to contents](#contents)
 
-#### [Features Left To Implement](#featuresLeft)
+#### Features Left To Implement
 
 1. ##### Email authentication and email notification of upcoming trips
 
@@ -272,7 +260,7 @@ The subtle grey of the navbar hover effect and box shadows on the cards and butt
 
 [Back to contents](#contents)
 
-## [Collections Data Structure](#coll)
+## Collections Data Structure
 
 This project utilizes the NoSQL database MongoDB and used four database collections:
 
@@ -322,7 +310,7 @@ This project utilizes the NoSQL database MongoDB and used four database collecti
 
 [Back to contents](#contents)
 
-## [Technologies Used](#technologies)
+## Technologies Used
 
 This project utilises HTML, CSS and JavaScript and Python programming languages.
 
@@ -351,17 +339,17 @@ This project utilises HTML, CSS and JavaScript and Python programming languages.
 
 [Back to contents](#contents)
 
-## [Testing](#testing)
+## Testing
 
 Details on Testing can be found in the separate [testing.md](testing.md) file
 
 [Back to contents](#contents)
 
-## [Deployment](#deploy)
+## Deployment
 
 This project is hosted on [Heroku](https://www.heroku.com/free)
 
-#### [Heroku Deployment](#heroku)
+#### Heroku Deployment
 
 To deploy Dream Trip Planner to Heroku, take the following steps:
 
@@ -390,7 +378,7 @@ To deploy Dream Trip Planner to Heroku, take the following steps:
 
 10. The app is now built and a confirmation message should display that says "Your app was successfully deployed". You can then click "View" to launch it.
 
-#### [How to run this project locally](#local)
+#### How to run this project locally
 
 1. Save a copy of the github repository located at https://github.com/shoreenb/dream-trip-planner by clicking the "Code" button at the top of the page next to the green "Gitpod" button, then scroll down to "Download ZIP" button  and extract the zip file to your chosen folder. If you have Git installed on your system, you can clone the repository with the following command.
 
@@ -427,13 +415,13 @@ git clone https://github.com/shoreenb/dream-trip-planner
 
 [Back to contents](#contents)
 
-## [Credits](#credit)
+## Credits
 
 YouTube Tutorials: 
 
 Build a Travel Agency Theme With Materialize CSS 1.0.0 by Traversy Media:https://www.youtube.com/watch?v=MaP3vO-vEsg&t=2938s
 
-#### [Content](#content)
+#### Content
 
 Card captions: https://www.britishairways.com/en-gb/destinations/holiday-types
 
@@ -441,7 +429,7 @@ Popular tourist destinations:https://www.tripadvisor.co.uk/TravelersChoice-Desti
 
 Country Information for the database:https://www.worldatlas.com/countries
 
-#### [Media](#media)
+#### Media
 
 **Images**
 
@@ -485,13 +473,13 @@ Country Information for the database:https://www.worldatlas.com/countries
 
 - Bulgaria Image by <a href="https://pixabay.com/users/smarkov2-1781302/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2168008">Svetoslav Markov</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2168008">Pixabay</a>
 
-#### [Code](#code)
+#### Code
 
 - .after function:https://api.jquery.com/after/
 
 - Code for listing destinations in a table using jinja:https://stackoverflow.com/questions/44606429/modal-window-in-jinja2-template-flask
 
-#### [Acknowledgements](#acknowledge)
+#### Acknowledgements
 
 Special thanks to my mentor Gerard McBride for his patience and assistance with this project and the many Code Institute Tutors that gave guidance on the issues I faced.
 
