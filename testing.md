@@ -28,7 +28,6 @@ The following validation services were used to check the validity of the website
 
 - [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) was used to validate CSS 
 
-  ```
   <p>
       <a href="http://jigsaw.w3.org/css-validator/check/referer">
           <img style="border:0;width:88px;height:31px"
@@ -43,7 +42,6 @@ The following validation services were used to check the validity of the website
           alt="Valid CSS!" />
       </a>
   </p>
-  ```
 
 - [JSHint ](https://jshint.com/) was used to validate JavaScript
 
