@@ -12,7 +12,7 @@
 
 ![Mock Up Image](static/images/mock-ups/mock-up.png)
 
-## [Table of Contents](#contents)
+## Table of Contents
 
 1. [UX](#ux)
    - [Project Goals](#project)
@@ -77,7 +77,6 @@ The target audience for this website is a user that:
 - Does not like leaving things to chance and wants an easy way to know where they should be or what they should be doing next.
 - Wants to plan a trip they have always wanted to go on
 
-[Back to contents](#contents)
 
 #### Developer Goals
 
