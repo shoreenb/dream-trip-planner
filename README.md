@@ -4,11 +4,13 @@
 
 ## <h2 align="center">An Itinerary Manager for planning your dream trips</h2>
 
-<p align="center">[Dream Trip Planner](https://dream-trip-planner-project.herokuapp.com/) is a dream trip itinerary planner as well as a source of information for world destinations. It was designed to provide the tools needed for the target audience to research their dream destination, plan daily activities and refer back to their planned itineraries during their trip</p>
+<div align="center">
+[Dream Trip Planner](https://dream-trip-planner-project.herokuapp.com/) is a dream trip itinerary planner as well as a source of information for world destinations. It was designed to provide the tools needed for the target audience to research their dream destination, plan daily activities and refer back to their planned itineraries during their trip.
+<br>
 
 ![Mock Up Image](static/images/mock-ups/mock-up.png)
 
-
+</div>
 
 ## [Table of Contents](#contents)
 
