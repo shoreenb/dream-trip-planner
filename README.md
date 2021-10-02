@@ -12,53 +12,9 @@
 
 ![Mock Up Image](static/images/mock-ups/mock-up.png)
 
-## Table of Contents
+## [UX](#ux)
 
-1. [UX](#ux)
-   - [Project Goals](#project)
-   - [Visitor Goals](#visitor)
-   - [Developer Goals](#developer)
-   - [User Stories](#user)
-   - [Design](#design)
-   - [Wireframes](#wireframes)
-   
-2. [Features](#features)
-   - [Existing Features](#existing)
-      - [Unregistered Visitors](#unreg)
-         - [Public Home](#unregHome)
-         - [Register](#register)
-      - [Registered Visitors](#regVis)
-         - [Login](#login)
-         - [Account](#acct)
-         - [Home](#reg-home)
-         - [Add Itinerary](#add)
-         - [Itineraries](#itin)
-         - [Edit Itineraries](#edit)
-         - [Remove Itineraries](#remove)
-         - [Access](#access)
-         - [Manage Destinations](#manage)
-   - [Features Left To Implement](#featuresLeft)
-
-3. [Information Architecture](#info)
-
-4. [Technologies Used](#technologies)
-   - [Collections Data Structure](#coll)
-
-5. [Testing](#testing)
-
-6. [Deployment](#deploy)
-   - [Heroku Deployment](#heroku)
-   - [How to run this project locally](#local)
-
-7. [Credits](#credits)
-   - [Content](#content)
-   - [Media](#media)
-   - [Code](#code)
-   - [Acknowledgements](#acknowledge)
-
-## UX
-
-### Project Goals
+### [Project Goals](#project)
 
 The main goal of Dream Trip Planner is to provide a resource for someone:
 
@@ -66,7 +22,7 @@ The main goal of Dream Trip Planner is to provide a resource for someone:
 - To have a database of destinations that can be researched as inspiration for the next trip.
 - To be able to organise each item on the itinerary by time, date, day of the trip, and the length of time it takes down to the minute.
 
-#### Visitor Goals
+#### [Visitor Goals](#visitor)
 
 The target audience for this website is a user that:
 
@@ -78,7 +34,7 @@ The target audience for this website is a user that:
 - Wants to plan a trip they have always wanted to go on
 
 
-#### Developer Goals
+#### [Developer Goals](#developer)
 
 As a developer the aim is to create a web application that will:
 
