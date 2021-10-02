@@ -10,17 +10,7 @@
 [Visit the Dream Trip Planner page](http://dream-trip-planner-project.herokuapp.com/)
 ```
 
-## Table Of Contents
-
-1. <a name="valid">Validation Services</a>
-2. <a name="clientStories">Testing Client Stories</a>
-3. <a name="manual">Manual Testing</a>
-
-- <a name="desktop">Tests For Desktop</a>
-
-- <a name="devices">Tests for Mobile Devices </a>
-
-## [Validation Services](#valid)
+## Validation Services
 
 The following validation services were used to check the validity of the website code.
 
@@ -45,7 +35,7 @@ The following validation services were used to check the validity of the website
 
 - [JSHint ](https://jshint.com/) was used to validate JavaScript
 
-## [Testing Client Stories](#clientStories)
+## Testing Client Stories
 
 This section goes through each user story in the UX section of the README.md
 
@@ -73,8 +63,6 @@ As a new user of Dream Trip Planner, I want:
 6. To contact or follow Dream Trip Planner on social media platforms.
    - All the social media platform links are located in the footer on every page.
 
-     
-
 As someone who has previously signed up with Dream Trip Planner I want:
 
 1. The ability to go directly to my previously created Itineraries.
@@ -92,11 +80,11 @@ As someone who has previously signed up with Dream Trip Planner I want:
 6. The ability to connect with Dream Trip Planner to suggest destinations that could be added to the database.
    - The 'Connect With Us' section also allow visitors to find Dream Trip Planner on various platforms if they want to suggest a destination.
 
-## [Manual Testing](#manual)
+## Manual Testing
 
 This section is a detailed account of all the manual testing that has been done to confirm all the areas of the site work as expected.
 
-### [Tests For Desktop](#desktop)
+### Tests For Desktop
 
 The following steps were repeated using Chrome, Firefox and Internet Explorer and on screen sizes:
 
@@ -234,7 +222,7 @@ The following steps were repeated using Chrome, Firefox and Internet Explorer an
    - Confirm that clicking 'No' cancels the action.
    - Confirm that clicking 'YES' permanently removes the destination.
 
-### [Mobile Devices](#devices)
+### Mobile Devices
 
 The following steps were repeated on physical devices available to the developer: Oppo X2 Lite, Motorola G8, Samsung and a tablet, as well as all the simulated devices and responsive options on the Chrome Developer Tools:
 
@@ -268,8 +256,3 @@ The following steps were repeated on physical devices available to the developer
 6. Connect With Us
  - Checked that the title, text and icons are central
  - Checked that the footer fits within the width of the page
-
-
-
-
-

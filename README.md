@@ -12,9 +12,9 @@
 
 ![Mock Up Image](static/images/mock-ups/mock-up.png)
 
-## [UX](#ux)
+## UX
 
-### [Project Goals](#project)
+### Project Goals
 
 The main goal of Dream Trip Planner is to provide a resource for someone:
 
@@ -22,7 +22,7 @@ The main goal of Dream Trip Planner is to provide a resource for someone:
 - To have a database of destinations that can be researched as inspiration for the next trip.
 - To be able to organise each item on the itinerary by time, date, day of the trip, and the length of time it takes down to the minute.
 
-#### [Visitor Goals](#visitor)
+#### Visitor Goals
 
 The target audience for this website is a user that:
 
@@ -33,15 +33,12 @@ The target audience for this website is a user that:
 - Does not like leaving things to chance and wants an easy way to know where they should be or what they should be doing next.
 - Wants to plan a trip they have always wanted to go on
 
-
-#### [Developer Goals](#developer)
+#### Developer Goals
 
 As a developer the aim is to create a web application that will:
 
 - Provide a secure platform that a registered person can access to find a list of the itineraries that they have planned or information to assist them in creating an itinerary.
 - To put into practice the newly acquired knowledge of frontend and backend programming by combining HTML, CSS, Materialize and JavaScript with Python, MongoDB, Flask and Jinja.
-
-[Back to contents](#contents)
 
 #### User Stories
 
@@ -61,8 +58,6 @@ As someone who has previously signed up with Dream Trip Planner I want:
 4. To be able to quickly search for a particular itinerary.
 5. To be able to edit or delete my itineraries.
 6. The ability to connect with Dream Trip Planner to suggest destinations that could be added to the database.
-
-[Back to contents](#contents)
 
 #### Design
 
@@ -84,8 +79,6 @@ The icons used on the 'Add Itinerary' page for example, were chosen to emphasise
 
 The subtle grey of the navbar hover effect and box shadows on the cards and buttons direct the user to the interactive parts of the site whilst also adding depth and interest to the design.
 
-[Back to contents](#contents)
-
 #### Wireframes
 
 - [Home](static/images/wireframes/home.pdf)
@@ -94,8 +87,6 @@ The subtle grey of the navbar hover effect and box shadows on the cards and butt
 - [Itineraries](static/images/wireframes/itineraries.pdf)
 - [Log In](static/images/wireframes/login.pdf)
 - [Destinations](static/images/wireframes/trip-info.pdf)
-
-[Back to contents](#contents)
 
 ## Features
 
@@ -119,8 +110,6 @@ The subtle grey of the navbar hover effect and box shadows on the cards and butt
 ![Register](static/images/mock-ups/reg-mock.png)
 
 - A new user will need to fill out the registration form in order to gain access to the main parts of the website and to gain access to an account where their registration details and itineraries can be found. 
-
-[Back to contents](#contents)
 
 #### Registered Visitor
 
@@ -186,8 +175,6 @@ The subtle grey of the navbar hover effect and box shadows on the cards and butt
 
    - Admin is also the only one to have access to manage the available destinations in the database. 'Manage Destinations' only appears in the toolbar for admin.
 
-[Back to contents](#contents)
-
 #### Features Left To Implement
 
 1. ##### Email authentication and email notification of upcoming trips
@@ -212,8 +199,6 @@ The subtle grey of the navbar hover effect and box shadows on the cards and butt
 5. ##### Find tourist attractions at destination
 
    - In future users could find information on popular tourist attractions, which they can use to add to their itineraries
-
-[Back to contents](#contents)
 
 ## Collections Data Structure
 
@@ -263,8 +248,6 @@ This project utilizes the NoSQL database MongoDB and used four database collecti
 | Country | country | string    |
 | Name    | name    | string    |
 
-[Back to contents](#contents)
-
 ## Technologies Used
 
 This project utilises HTML, CSS and JavaScript and Python programming languages.
@@ -292,13 +275,9 @@ This project utilises HTML, CSS and JavaScript and Python programming languages.
 - [Jinja](http://jinja.pocoo.org/docs/2.10/) 
   - **Jinja** to implement the 'DRY' method and simplify how data is displayed from the backend of this project across multiple templates, smoothly and effectively in html.
 
-[Back to contents](#contents)
-
 ## Testing
 
 Details on Testing can be found in the separate [testing.md](testing.md) file
-
-[Back to contents](#contents)
 
 ## Deployment
 
@@ -367,8 +346,6 @@ git clone https://github.com/shoreenb/dream-trip-planner
    You will need to add your own SECRET_KEY and MONGO_URI.
 
 6. You can now run the app locally by typing `python3 app.py` in the CLI and opening it in your browser.
-
-[Back to contents](#contents)
 
 ## Credits
 
@@ -445,4 +422,3 @@ No releases published
 #### Packages
 
 No packages published
-
