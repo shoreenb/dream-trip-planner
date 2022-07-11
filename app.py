@@ -313,6 +313,10 @@ def delete_cities(city_id):
     return redirect(url_for("get_cities"))
 
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template("pages/errors/404.html"), 404
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

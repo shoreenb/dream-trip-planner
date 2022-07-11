@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<p class="center">
+    <img src="static/animations/dtp.gif" alt="Maldives Image">
+    <h1>404</h1>
+    <h2> Sorry, that page can't be found.</h2>
+    <a href="{{ url_for('get_home') }}">< Return to home</a>
+    <a href="{{ url_for('get_itinerarys') }}">< Return to Itineraries</a>
+</p>
+{% endblock %}
